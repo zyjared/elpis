@@ -17,7 +17,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "app/**/*"
+    "elpis-core/**/*"
   ],
   "exclude": [
     "node_modules",
