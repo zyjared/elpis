@@ -1,6 +1,7 @@
-import type { ElpisApp } from './types'
+import type { ElpisApp, ElpisStartOptions } from './types'
 import path from 'node:path'
 import process from 'node:process'
+import fs from 'fs-extra'
 import Koa from 'koa'
 import { env } from './env'
 import { configLoader } from './loader/config'
@@ -21,26 +22,11 @@ const {
   resolve,
 } = path
 
-interface StartOptions {
-  /**
-   * 基础路径
-   *
-   * @default process.cwd()
-   */
-  baseDir?: string
-  /**
-   * 业务文件路径
-   *
-   * @default './app'
-   */
-  businessDir?: string
-}
-
 export default {
   /**
    * 启动项目
    */
-  async start(options: StartOptions = {}) {
+  async start(options: ElpisStartOptions = {}) {
     const {
       baseDir = process.cwd(),
       businessDir = './app',
@@ -61,26 +47,34 @@ export default {
     // 加载中间件
     // ------------------------------------------------------------
 
-    await middlewaresLoader(app)
-    log('start', 'load middleware done')
+    await Promise.all([
+      middlewaresLoader(app),
+      routerSchemaLoader(app),
+      controllerLoader(app),
+      serviceLoader(app),
+      configLoader(app),
+    ])
 
-    routerSchemaLoader(app)
-    log('start', 'load router schema done')
+    // 单独加载
+    await extendLoader(app)
 
-    controllerLoader(app)
-    log('start', 'load controller done')
+    // 全局中间件
+    try {
+      const ext = app.env.prod ? 'js' : '{ts,js}'
+      const modulePath = resolve(app.baseDir, `middleware.${ext}`)
 
-    serviceLoader(app)
-    log('start', 'load service done')
+      if (fs.existsSync(modulePath)) {
+        const moduleUrl = new URL(`file://${modulePath}`).href
+        const module = await import(moduleUrl)
+        module.default(app)
+      }
+    }
+    catch (error) {
+      console.error(error)
+    }
 
-    configLoader(app)
-    log('start', 'load config done')
-
-    extendLoader(app)
-    log('start', 'load extend done')
-
-    routerLoader(app)
-    log('start', 'load router done')
+    // 单独加载，router 参数需要完整的 app
+    await routerLoader(app)
 
     try {
       const port = process.env.PORT || 3000
