@@ -77,7 +77,11 @@ export default {
 
     try {
       const port = process.env.PORT || 3000
-      const host = process.env.IP || '0.0.0.0'
+      const host = process.env.IP || 'localhost'
+      app.use(async (ctx, next) => {
+        ctx.render('index')
+        await next()
+      })
       app.listen(port, () => {
         // eslint-disable-next-line no-console
         console.log(`Server is running on http://${host}:${port}`)

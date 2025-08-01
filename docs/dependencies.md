@@ -28,3 +28,4 @@
 
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [tiny-glob](https://github.com/terkelg/tiny-glob)
+- [pug](https://github.com/pugjs/pug)
