@@ -13,7 +13,12 @@ function getEnvAlias(mode: ElpisApp['env']['mode']) {
 }
 
 function initEnv(): ElpisApp['env'] {
-  const mode = (process.env.NODE_ENV || 'development') as ElpisApp['env']['mode']
+  // windows 中，set 设置后可能携带空格
+  const mode = (
+    process.env.NODE_ENV
+    || 'development'
+  ).trim() as ElpisApp['env']['mode']
+
   const alias = getEnvAlias(mode)
   return {
     dev: mode === 'development',

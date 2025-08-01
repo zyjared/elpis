@@ -31,7 +31,7 @@ export async function configLoader(app: ElpisApp) {
 
   let defaultConfig = {}
   if (!fs.existsSync(defaultConfigPath)) {
-    console.error(`config.default.${ext} not found`)
+    console.error(`${defaultConfigPath} not found`)
   }
   else {
     try {

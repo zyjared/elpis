@@ -34,11 +34,10 @@ export default {
 
     const basePath = resolve(baseDir)
     const businessPath = resolve(basePath, businessDir)
-    // console.log(baseDirPath, businessDirPath)
 
     const app = new Koa() as unknown as ElpisApp
     app.env = env
-    log('start', 'env is production', env.prod)
+    log('start', 'env is', env.mode)
 
     app.baseDir = basePath
     app.businessDir = businessPath
@@ -60,8 +59,8 @@ export default {
 
     // 全局中间件
     try {
-      const ext = app.env.prod ? 'js' : '{ts,js}'
-      const modulePath = resolve(app.baseDir, `middleware.${ext}`)
+      const ext = app.env.prod ? 'js' : 'ts'
+      const modulePath = resolve(app.businessDir, `middleware.${ext}`)
 
       if (fs.existsSync(modulePath)) {
         const moduleUrl = new URL(`file://${modulePath}`).href

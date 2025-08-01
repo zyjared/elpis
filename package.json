@@ -13,7 +13,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "commit": "git-cz",
-    "dev": "tsx watch index.ts",
+    "dev": "set NODE_ENV=development && tsx watch index.ts",
+    "beta": "set NODE_ENV=beta && tsx watch index.ts",
+    "prod": "set NODE_ENV=production && tsx watch index.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
