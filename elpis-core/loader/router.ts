@@ -71,9 +71,14 @@ export async function routerLoader(app: ElpisApp) {
   }
 
   // 路由兜底（健壮性）
-  router.get('*', async (ctx, _next) => {
-    ctx.status = 302 // 临时重定向
-    ctx.redirect('/')
+  router.get('(.*)', async (ctx, _next) => {
+    ctx.status = 404
+    ctx.body = {
+      error: 'Not Found',
+      message: 'The requested resource was not found',
+      path: ctx.path,
+      timestamp: new Date().toISOString(),
+    }
   })
 
   //  路由注册到 app 上

@@ -46,7 +46,7 @@ export async function controllerLoader(app: ElpisApp) {
       // custom-module/custom-controller.ts  --> customModule.customController
       // curtom_module/curtom_controller.ts  --> curtomModule.curtomController
       const name = file
-        .replace(new RegExp(`\\.${ext}$`), '') // 移除文件扩展名
+        .replace(/\.(ts|js)$/, '') // 移除文件扩展名
         .replace(/[-_][a-z]/g, s => s.at(1)?.toUpperCase() || '')
 
       // 使用绝对路径导入模块

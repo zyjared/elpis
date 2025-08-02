@@ -1,3 +1,4 @@
+import type KoaRouter from '@koa/router'
 import type Koa from 'koa'
 
 export interface ElpisState extends Omit<Koa.DefaultState, 'middleware'> {
@@ -58,6 +59,40 @@ type Extend = {
 }
 
 export type ElpisApp = Extend & BaseElpisApp
+
+// ------------------------------------------------------------
+// Loader 类型定义
+// ------------------------------------------------------------
+
+/**
+ * Router 模块导出类型
+ * 用于 app/router/ 目录下的文件
+ */
+export type RouterModule = (app: ElpisApp, router: KoaRouter) => void
+
+/**
+ * Controller 模块导出类型
+ * 用于 app/controller/ 目录下的文件
+ */
+export type ControllerModule = (app: ElpisApp) => new () => any
+
+/**
+ * Service 模块导出类型
+ * 用于 app/service/ 目录下的文件
+ */
+export type ServiceModule = (app: ElpisApp) => new () => any
+
+/**
+ * Middleware 模块导出类型
+ * 用于 app/middleware/ 目录下的文件
+ */
+export type MiddlewareModule = (app: ElpisApp) => any
+
+/**
+ * RouterSchema 模块导出类型
+ * 用于 app/router-schema/ 目录下的文件
+ */
+export type RouterSchemaModule = (app: ElpisApp) => any
 
 // ------------------------------------------------------------
 // 启动参数

@@ -1,3 +1,1 @@
-# elpis
-
-- node 20
+# Elpis

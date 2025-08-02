@@ -40,7 +40,7 @@ export async function extendLoader(app: ElpisApp) {
       // custom-module/custom-extend.ts  --> customModule.customExtend
       // curtom_module/curtom_extend.ts  --> curtomModule.curtomExtend
       const name = file
-        .replace(new RegExp(`\\.${ext}$`), '') // 移除文件扩展名
+        .replace(/\.(ts|js)$/, '') // 移除文件扩展名
         .replace(/[-_][a-z]/g, s => s.at(1)?.toUpperCase() || '')
 
       // 如果 name 在 app 中，不应该加载

@@ -46,7 +46,7 @@ export async function middlewaresLoader(app: ElpisApp) {
       // custom-module/custom-middleware.ts  --> customModule.customMiddleware
       // curtom_module/curtom_middleware.ts  --> curtomModule.curtomMiddleware
       const name = file
-        .replace(new RegExp(`\\.${ext}$`), '') // 移除文件扩展名
+        .replace(/\.(ts|js)$/, '') // 移除文件扩展名
         .replace(/[-_][a-z]/g, s => s.at(1)?.toUpperCase() || '')
 
       // 使用绝对路径导入模块
