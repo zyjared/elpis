@@ -4,6 +4,7 @@ html(lang="zh-CN")
     title Elpis
     link(rel="icon" type="image/png" href="/static/logo.png")
     link(rel="stylesheet" href="/static/css/normalize.css")
+    script(src="/static/js/md5.min.js")
   body
     h1 Elpis
     p Welcome to Elpis
@@ -11,7 +12,14 @@ html(lang="zh-CN")
     button(onclick=`handleUpdate()`) 更新 project
     script.
       function handleClick() {
-        fetch('/api/project/list').then(res => res.json()).then(data => {
+        const signKey = 'test_sign_key'
+        const st = Date.now()
+        fetch('/api/project/list', {
+            headers: {
+                's_t': Date.now(),
+                's_sign': md5(`${signKey}_${Date.now()}`)
+            }
+        }).then(res => res.json()).then(data => {
           console.log(data)
         })
       }

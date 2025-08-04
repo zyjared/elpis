@@ -37,3 +37,5 @@
 - [superagent](https://github.com/ladjs/superagent)
 - [multer](https://github.com/expressjs/multer)
 - [log4js](https://github.com/log4js-node/log4js-node)
+- [md5](https://github.com/pvorb/node-md5)
+- [js-md5](https://www.jsdelivr.com/package/npm/js-md5)
