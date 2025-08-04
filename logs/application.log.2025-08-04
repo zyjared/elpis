@@ -1,2 +1,835 @@
 [2025-08-04T22:42:49.021] [INFO] default - update { name: '前端的 post' }
 [2025-08-04T22:44:15.541] [INFO] default - update { name: '前端的 post' }
+[2025-08-04T22:44:51.594] [INFO] default - update { name: '前端的 post' }
+[2025-08-04T23:31:10.825] [INFO] default - {}
+[2025-08-04T23:31:10.826] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.831] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.853] [INFO] default - {}
+[2025-08-04T23:31:10.853] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.854] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.866] [INFO] default - {}
+[2025-08-04T23:31:10.867] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.867] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.880] [INFO] default - {}
+[2025-08-04T23:31:10.880] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.881] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.889] [INFO] default - {}
+[2025-08-04T23:31:10.890] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.890] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.899] [INFO] default - {}
+[2025-08-04T23:31:10.899] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.900] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.913] [INFO] default - {}
+[2025-08-04T23:31:10.914] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.914] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.925] [INFO] default - {}
+[2025-08-04T23:31:10.926] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.926] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.935] [INFO] default - {}
+[2025-08-04T23:31:10.935] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.936] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.944] [INFO] default - {}
+[2025-08-04T23:31:10.945] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.945] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.953] [INFO] default - {}
+[2025-08-04T23:31:10.953] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.954] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.962] [INFO] default - {}
+[2025-08-04T23:31:10.962] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.963] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.972] [INFO] default - {}
+[2025-08-04T23:31:10.972] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.973] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.985] [INFO] default - {}
+[2025-08-04T23:31:10.985] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.986] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:10.996] [INFO] default - {}
+[2025-08-04T23:31:10.996] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:10.996] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:11.006] [INFO] default - {}
+[2025-08-04T23:31:11.006] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:11.006] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:11.016] [INFO] default - {}
+[2025-08-04T23:31:11.016] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:11.017] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:11.026] [INFO] default - {}
+[2025-08-04T23:31:11.026] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:11.027] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:11.035] [INFO] default - {}
+[2025-08-04T23:31:11.035] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:11.035] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:11.042] [INFO] default - {}
+[2025-08-04T23:31:11.043] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:11.043] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.089] [INFO] default - {}
+[2025-08-04T23:31:12.089] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.090] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.100] [INFO] default - {}
+[2025-08-04T23:31:12.100] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.101] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.107] [INFO] default - {}
+[2025-08-04T23:31:12.107] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.108] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.116] [INFO] default - {}
+[2025-08-04T23:31:12.116] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.117] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.125] [INFO] default - {}
+[2025-08-04T23:31:12.125] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.126] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.133] [INFO] default - {}
+[2025-08-04T23:31:12.133] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.134] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.140] [INFO] default - {}
+[2025-08-04T23:31:12.140] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.140] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.148] [INFO] default - {}
+[2025-08-04T23:31:12.148] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.149] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.156] [INFO] default - {}
+[2025-08-04T23:31:12.157] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.157] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.164] [INFO] default - {}
+[2025-08-04T23:31:12.164] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.164] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.173] [INFO] default - {}
+[2025-08-04T23:31:12.173] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.173] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.182] [INFO] default - {}
+[2025-08-04T23:31:12.182] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.182] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.195] [INFO] default - {}
+[2025-08-04T23:31:12.195] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.196] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.203] [INFO] default - {}
+[2025-08-04T23:31:12.203] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.204] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.212] [INFO] default - {}
+[2025-08-04T23:31:12.212] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.213] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.219] [INFO] default - {}
+[2025-08-04T23:31:12.219] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.220] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.228] [INFO] default - {}
+[2025-08-04T23:31:12.229] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.229] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.238] [INFO] default - {}
+[2025-08-04T23:31:12.239] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.239] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.248] [INFO] default - {}
+[2025-08-04T23:31:12.248] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.249] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:12.256] [INFO] default - {}
+[2025-08-04T23:31:12.256] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:12.257] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.279] [INFO] default - {}
+[2025-08-04T23:31:17.279] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.280] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.287] [INFO] default - {}
+[2025-08-04T23:31:17.287] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.287] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.292] [INFO] default - {}
+[2025-08-04T23:31:17.292] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.292] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.297] [INFO] default - {}
+[2025-08-04T23:31:17.297] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.298] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.304] [INFO] default - {}
+[2025-08-04T23:31:17.305] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.305] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.311] [INFO] default - {}
+[2025-08-04T23:31:17.311] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.311] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.317] [INFO] default - {}
+[2025-08-04T23:31:17.317] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.317] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.325] [INFO] default - {}
+[2025-08-04T23:31:17.325] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.326] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.332] [INFO] default - {}
+[2025-08-04T23:31:17.332] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.333] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.339] [INFO] default - {}
+[2025-08-04T23:31:17.339] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.339] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.345] [INFO] default - {}
+[2025-08-04T23:31:17.346] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.346] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.351] [INFO] default - {}
+[2025-08-04T23:31:17.351] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.351] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.358] [INFO] default - {}
+[2025-08-04T23:31:17.358] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.358] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.363] [INFO] default - {}
+[2025-08-04T23:31:17.363] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.364] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.371] [INFO] default - {}
+[2025-08-04T23:31:17.371] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.372] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.379] [INFO] default - {}
+[2025-08-04T23:31:17.379] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.379] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.385] [INFO] default - {}
+[2025-08-04T23:31:17.385] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.386] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.393] [INFO] default - {}
+[2025-08-04T23:31:17.393] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.394] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.401] [INFO] default - {}
+[2025-08-04T23:31:17.401] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.402] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:17.407] [INFO] default - {}
+[2025-08-04T23:31:17.407] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:17.408] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:31:24.600] [INFO] default - {}
+[2025-08-04T23:31:24.601] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\index.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:31:24.603] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:32:07.978] [INFO] default - {}
+[2025-08-04T23:32:07.979] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\view.ts:5:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:32:07.981] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:35:07.988] [INFO] default - {}
+[2025-08-04T23:35:07.989] [ERROR] default - [-- exception --] Error: template not found
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:24:15)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\error.ts:6:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+[2025-08-04T23:35:07.992] [ERROR] default - [-- exception --] undefined template not found undefined
+[2025-08-04T23:35:36.289] [INFO] default - {"message":"template not found"}
+[2025-08-04T23:35:36.290] [ERROR] default - [-- exception --] NotFoundError: template not found
+    at Object.throw (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa@3.0.1\node_modules\koa\lib\context.js:96:11)
+    at Object.ctx.render (C:\Users\jiang\dev\js\elpis\app\middleware.ts:23:13)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\router\error.ts:6:9)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:260:18
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\@koa+router@13.1.1\node_modules\@koa\router\lib\router.js:265:33)
+    at dispatch (C:\Users\jiang\dev\js\elpis\node_modules\.pnpm\koa-compose@4.1.0\node_modules\koa-compose\index.js:42:32)
+    at <anonymous> (C:\Users\jiang\dev\js\elpis\app\middleware\error-handler.ts:9:13)
+[2025-08-04T23:35:36.294] [ERROR] default - [-- exception --] 404 template not found undefined

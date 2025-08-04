@@ -1,8 +1,11 @@
 import type KoaRouter from '@koa/router'
 import type Koa from 'koa'
+import type { ElpisContext } from './context'
+import type { ExtendElpisApp } from './extend'
+import type { ElpisStartOptions } from './options'
+import type { ElpisState } from './state'
 
-export interface ElpisState extends Omit<Koa.DefaultState, 'middleware'> {
-}
+export type { ElpisContext, ElpisStartOptions, ElpisState }
 
 export interface Env {
   dev: boolean
@@ -32,7 +35,7 @@ interface Config {
   [key: string]: any
 }
 
-interface BaseElpisApp extends Omit<Koa, 'env'> {
+interface BaseElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
   env: Env
 
   baseDir: string
@@ -50,12 +53,8 @@ interface BaseElpisApp extends Omit<Koa, 'env'> {
 
   config: Config
 
-}
+  options: ElpisStartOptions
 
-// 拓展 app 的属性
-type ExtendElpisApp = {
-  // TODO: 待确定返回值
-  [K in Exclude<string, keyof BaseElpisApp>]?: (app: ElpisApp) => any
 }
 
 export type ElpisApp = ExtendElpisApp & BaseElpisApp
@@ -86,7 +85,7 @@ export type ServiceModule = (app: ElpisApp) => new () => any
  * Middleware 模块导出类型
  * 用于 app/middleware/ 目录下的文件
  */
-export type MiddlewareModule = (app: ElpisApp) => any
+export type MiddlewareModule = (app: ElpisApp) => (ctx: ElpisContext, next: () => Promise<void>) => Promise<void>
 
 /**
  * RouterSchema 模块导出类型
@@ -99,34 +98,3 @@ export type RouterSchemaModule = (app: ElpisApp) => any
  * 用于 app/extend/ 目录下的文件
  */
 export type ExtendModule = (app: ElpisApp) => any
-
-// ------------------------------------------------------------
-// Context 类型定义
-// ------------------------------------------------------------
-
-interface ElpisRequest extends Koa.Request {
-  body: Record<string, unknown>
-}
-
-export interface ElpisContext extends Koa.Context {
-  request: ElpisRequest
-}
-// ------------------------------------------------------------
-// 启动参数
-// ------------------------------------------------------------
-
-export interface ElpisStartOptions {
-  /**
-   * 基础路径
-   *
-   * @default process.cwd()
-   */
-  baseDir?: string
-  /**
-   * 业务文件路径
-   *
-   * @default './app'
-   */
-  businessDir?: string
-
-}

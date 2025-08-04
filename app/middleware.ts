@@ -19,9 +19,11 @@ export default function (app: ElpisApp) {
       const templatePath = path.join(businessDir, 'views', `${template}.pug`)
       ctx.type = 'text/html'
 
-      ctx.body = fs.existsSync(templatePath)
-        ? pug.renderFile(templatePath, data)
-        : 'Elpis template not found'
+      if (!fs.existsSync(templatePath)) {
+        ctx.throw(404, 'template not found')
+      }
+
+      ctx.body = pug.renderFile(templatePath, data)
     }
     await next()
   })
@@ -34,4 +36,7 @@ export default function (app: ElpisApp) {
 
   // 日志
   app.use(logger())
+
+  // 错误处理
+  app.use(app.middlewares.errorHandler)
 }

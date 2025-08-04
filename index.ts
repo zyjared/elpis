@@ -1,3 +1,5 @@
 import elpisCore from './elpis-core'
 
-elpisCore.start()
+elpisCore.start({
+  homePage: '/',
+})

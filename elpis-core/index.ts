@@ -36,6 +36,7 @@ export default {
     const businessPath = resolve(basePath, businessDir)
 
     const app = new Koa() as unknown as ElpisApp
+    app.options = options
     app.env = env
     log('start', 'env is', env.mode)
 
