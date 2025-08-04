@@ -49,10 +49,11 @@ export default {
     await Promise.all([
       middlewaresLoader(app),
       routerSchemaLoader(app),
-      controllerLoader(app),
       serviceLoader(app),
       configLoader(app),
     ])
+
+    await controllerLoader(app)
 
     // 单独加载
     await extendLoader(app)

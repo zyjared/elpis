@@ -23,6 +23,8 @@
 - [koa](https://koajs.com/)
 - [koa - 中英对照](https://koa.nodejs.cn/)
 - [@koa/router](https://github.com/koajs/router)
+- [koa-static](https://github.com/koajs/static)
+<!-- - [@koa/send](https://github.com/koajs/send) -->
 
 ## 其他
 
