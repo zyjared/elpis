@@ -91,7 +91,7 @@ export type MiddlewareModule = (app: ElpisApp) => (ctx: ElpisContext, next: () =
  * RouterSchema 模块导出类型
  * 用于 app/router-schema/ 目录下的文件
  */
-export type RouterSchemaModule = (app: ElpisApp) => any
+export type RouterSchemaModule = Record<string, any>
 
 /**
  * ExtendModule 模块导出类型

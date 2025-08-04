@@ -42,4 +42,7 @@ export default function (app: ElpisApp) {
 
   //  签名合法性校验
   app.use(app.middlewares.apiSignVerify)
+
+  //  API 参数校验
+  app.use(app.middlewares.apiParamsVerify)
 }

@@ -14,7 +14,7 @@ html(lang="zh-CN")
       function handleClick() {
         const signKey = 'test_sign_key'
         const st = Date.now()
-        fetch('/api/project/list', {
+        fetch('/api/project/list?proj_key=abc', {
             headers: {
                 's_t': Date.now(),
                 's_sign': md5(`${signKey}_${Date.now()}`)

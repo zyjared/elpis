@@ -1,5 +1,0 @@
-[2025-08-05T00:09:22.467] [INFO] default - [GET /api/project/list] signature: 53f127fccb6f20a617b26e4ec4ba4802
-[2025-08-05T00:09:29.769] [INFO] default - [POST /api/project/update] signature: 1e4eaebc69a94cabd724c9c56fb8567e
-[2025-08-05T00:09:29.769] [INFO] default - update { name: '前端的 post' }
-[2025-08-05T00:11:16.324] [INFO] default - [GET /api/project/list] signature: a43dea54965b52703553543beca913d0
-[2025-08-05T00:11:20.280] [INFO] default - [POST /api/project/update] signature: 1e4eaebc69a94cabd724c9c56fb8567e
