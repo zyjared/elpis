@@ -2,6 +2,7 @@ import type { ElpisApp } from '../elpis-core/types'
 import path from 'node:path'
 import { bodyParser } from '@koa/bodyparser'
 import fs from 'fs-extra'
+import logger from 'koa-logger'
 import koaStatic from 'koa-static'
 import pug from 'pug'
 
@@ -30,4 +31,7 @@ export default function (app: ElpisApp) {
     jsonLimit: '10mb',
     enableTypes: ['json', 'form', 'text'],
   }))
+
+  // 日志
+  app.use(logger())
 }

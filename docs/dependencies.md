@@ -27,6 +27,7 @@
 <!-- - [@koa/send](https://github.com/koajs/send) -->
 - [@koa/bodyparser](https://github.com/koajs/bodyparser)
 - [@koa/multer](https://github.com/koajs/multer)
+- [koa-logger](https://github.com/koajs/logger)
 
 ## 其他
 
@@ -35,3 +36,4 @@
 - [pug](https://github.com/pugjs/pug)
 - [superagent](https://github.com/ladjs/superagent)
 - [multer](https://github.com/expressjs/multer)
+- [log4js](https://github.com/log4js-node/log4js-node)

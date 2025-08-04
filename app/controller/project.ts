@@ -1,5 +1,4 @@
-import type { Context } from 'koa'
-import type { ControllerModule } from '../../elpis-core/types'
+import type { ControllerModule, ElpisContext } from '../../elpis-core/types'
 import buildBaseController from './base'
 
 const controller: ControllerModule = (app) => {
@@ -10,9 +9,8 @@ const controller: ControllerModule = (app) => {
     }
 
     // 这里的 ctx 是 router 传入的
-    update(ctx: Context) {
-      // eslint-disable-next-line no-console
-      console.log('post', ctx.request.body)
+    update(ctx: ElpisContext) {
+      this.app.logger.info('update', ctx.request.body)
       return this.service.project.update()
     }
   }

@@ -53,12 +53,12 @@ interface BaseElpisApp extends Omit<Koa, 'env'> {
 }
 
 // 拓展 app 的属性
-type Extend = {
+type ExtendElpisApp = {
   // TODO: 待确定返回值
   [K in Exclude<string, keyof BaseElpisApp>]?: (app: ElpisApp) => any
 }
 
-export type ElpisApp = Extend & BaseElpisApp
+export type ElpisApp = ExtendElpisApp & BaseElpisApp
 
 // ------------------------------------------------------------
 // Loader 类型定义
@@ -94,6 +94,23 @@ export type MiddlewareModule = (app: ElpisApp) => any
  */
 export type RouterSchemaModule = (app: ElpisApp) => any
 
+/**
+ * ExtendModule 模块导出类型
+ * 用于 app/extend/ 目录下的文件
+ */
+export type ExtendModule = (app: ElpisApp) => any
+
+// ------------------------------------------------------------
+// Context 类型定义
+// ------------------------------------------------------------
+
+interface ElpisRequest extends Koa.Request {
+  body: Record<string, unknown>
+}
+
+export interface ElpisContext extends Koa.Context {
+  request: ElpisRequest
+}
 // ------------------------------------------------------------
 // 启动参数
 // ------------------------------------------------------------

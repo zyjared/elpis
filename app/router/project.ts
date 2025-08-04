@@ -9,8 +9,6 @@ const routerModule: RouterModule = (app, router) => {
 
   router.post('/api/project/update', async (ctx) => {
     const data = await projectController.update(ctx)
-    // eslint-disable-next-line no-console
-    console.log('update', data)
     projectController.success(ctx, data)
   })
 }
