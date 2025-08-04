@@ -1,5 +1,6 @@
 import type { ElpisApp } from '../elpis-core/types'
 import path from 'node:path'
+import { bodyParser } from '@koa/bodyparser'
 import fs from 'fs-extra'
 import koaStatic from 'koa-static'
 import pug from 'pug'
@@ -8,8 +9,10 @@ export default function (app: ElpisApp) {
   // 模板
   const businessDir = app.businessDir
 
+  // 静态文件
   app.use(koaStatic(path.join(businessDir, 'public')))
 
+  // 模板引擎
   app.use(async (ctx, next) => {
     ctx.render = (template: string, data = {}) => {
       const templatePath = path.join(businessDir, 'views', `${template}.pug`)
@@ -21,4 +24,10 @@ export default function (app: ElpisApp) {
     }
     await next()
   })
+
+  //  解析 ctx.body
+  app.use(bodyParser({
+    jsonLimit: '10mb',
+    enableTypes: ['json', 'form', 'text'],
+  }))
 }

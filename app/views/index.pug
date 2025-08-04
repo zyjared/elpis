@@ -8,9 +8,24 @@ html(lang="zh-CN")
     h1 Elpis
     p Welcome to Elpis
     button(onclick=`handleClick()`) 获得 project 列表
+    button(onclick=`handleUpdate()`) 更新 project
     script.
       function handleClick() {
         fetch('/api/project/list').then(res => res.json()).then(data => {
+          console.log(data)
+        })
+      }
+
+      function handleUpdate() {
+        fetch('/api/project/update', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: '前端的 post',
+          })
+        }).then(res => res.json()).then(data => {
           console.log(data)
         })
       }
