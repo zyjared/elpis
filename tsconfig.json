@@ -1,26 +1,16 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "paths": {
-      "@/*": ["./app/*"]
-    },
-    "resolveJsonModule": true,
-    "strict": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
+    "lib": ["ESNext", "DOM"]
   },
   "include": [
-    "elpis-core/**/*"
+    "elpis-core/**/*.ts",
+    "elpis-core/**/*.d.ts",
+    "app/**/*.ts",
+    "app/**/*.d.ts",
+    "app/**/*.vue"
   ],
   "exclude": [
-    "node_modules",
-    "dist"
+    "node_modules"
   ]
 }

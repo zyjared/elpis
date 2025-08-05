@@ -40,3 +40,4 @@
 - [md5](https://github.com/pvorb/node-md5)
 - [js-md5](https://www.jsdelivr.com/package/npm/js-md5)
 - [ajv](https://github.com/ajv-validator/ajv)
+- [@vue/tsconfig](https://github.com/vuejs/tsconfig#readme)
