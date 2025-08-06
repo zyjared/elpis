@@ -14,7 +14,7 @@ const logger: ExtendModule = (app: ElpisApp) => {
         console: { type: 'console' },
         dateFile: {
           type: 'dateFile',
-          filename: path.resolve(app.baseDir, 'logs', 'application.log'),
+          filename: path.resolve(app.baseDir, 'runtime/logs', 'application.log'),
           pattern: 'yyyy-MM-dd',
           alwaysIncludePattern: true,
         },

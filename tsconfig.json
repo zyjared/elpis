@@ -1,7 +1,11 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    // 如果无法推断类型，回退到 any 后需要报错
+    // https://www.typescriptlang.org/tsconfig/#noImplicitAny
+    "noImplicitAny": true,
+    "outDir": "./dist/"
   },
   "include": [
     "elpis-core/**/*.ts",

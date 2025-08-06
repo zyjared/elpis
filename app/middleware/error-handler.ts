@@ -8,8 +8,13 @@ const errorHandler: MiddlewareModule = (app) => {
     try {
       await next()
     }
-    catch (error) {
-      const { status, message, detail } = error
+    catch (error: unknown) {
+      // FIXME: 这里需要类型
+      const { status, message, detail } = error as {
+        status: number
+        message: string
+        detail: string
+      }
       app.logger.info(JSON.stringify(error))
       app.logger.error('[-- exception --]', error)
       app.logger.error('[-- exception --]', status, message, detail)
