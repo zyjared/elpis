@@ -50,14 +50,14 @@ export default {
     await Promise.all([
       middlewaresLoader(app),
       routerSchemaLoader(app),
-      serviceLoader(app),
       configLoader(app),
+      extendLoader(app),
     ])
 
+    await serviceLoader(app)
     await controllerLoader(app)
 
     // 单独加载
-    await extendLoader(app)
 
     // 全局中间件
     try {
