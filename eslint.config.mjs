@@ -7,5 +7,7 @@ export default antfu({
     'dist/**',
     'logs/**',
     'runtime/**',
+    '**/static/**',
+    '**/*.pug',
   ],
 })
