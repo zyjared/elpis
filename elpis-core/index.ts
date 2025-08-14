@@ -30,10 +30,12 @@ export default {
     const {
       baseDir = process.cwd(),
       businessDir = './app',
+      pagesDir = './app/public',
     } = options
 
     const basePath = resolve(baseDir)
     const businessPath = resolve(basePath, businessDir)
+    const pagesPath = resolve(basePath, pagesDir)
 
     const app = new Koa() as unknown as ElpisApp
     app.options = options
@@ -42,6 +44,7 @@ export default {
 
     app.baseDir = basePath
     app.businessDir = businessPath
+    app.pagesDir = pagesPath
 
     // ------------------------------------------------------------
     // 加载中间件
@@ -79,11 +82,12 @@ export default {
 
     try {
       const port = process.env.PORT || 3000
-      const host = process.env.IP || 'localhost'
+      const host = process.env.IP || '127.0.0.1'
       app.use(async (ctx, next) => {
         ctx.render('index')
         await next()
       })
+
       app.listen(port, () => {
         // eslint-disable-next-line no-console
         console.log(`Server is running on http://${host}:${port}`)

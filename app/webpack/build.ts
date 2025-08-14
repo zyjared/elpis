@@ -7,7 +7,7 @@ import { getProdConfig } from './config/webpack.prod'
 const program = new Command()
 
 program
-  .option('-m, --mode <mode>', 'build mode', 'dev')
+  .option('-m, --mode <mode>', 'build mode', 'prod')
   .parse(process.argv)
   .action((options) => {
     const mode = options.mode

@@ -1,12 +1,16 @@
 import type { ElpisApp } from '../elpis-core/types'
 import path from 'node:path'
 import { bodyParser } from '@koa/bodyparser'
+import cors from '@koa/cors'
 import fs from 'fs-extra'
 import logger from 'koa-logger'
 import koaStatic from 'koa-static'
 import pug from 'pug'
 
 export default function (app: ElpisApp) {
+  // 允许跨域
+  app.use(cors())
+
   // 模板
   const businessDir = app.businessDir
 
@@ -16,7 +20,7 @@ export default function (app: ElpisApp) {
   // 模板引擎
   app.use(async (ctx, next) => {
     ctx.render = (template: string, data = {}) => {
-      const templatePath = path.join(businessDir, 'views', `${template}.pug`)
+      const templatePath = path.join(app.pagesDir, `${template}.pug`)
       ctx.type = 'text/html'
 
       if (!fs.existsSync(templatePath)) {

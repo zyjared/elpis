@@ -1,17 +1,46 @@
 <script setup lang="ts">
-import { test } from '$pages/common/test'
-import { ref } from 'vue'
+import { curl } from '$common/curl'
+import { ElButton, ElTable, ElTableColumn } from 'element-plus'
+import { onBeforeMount, ref, shallowRef } from 'vue'
 
-test()
-
-// eslint-disable-next-line unused-imports/no-unused-vars
 const a = ref(1)
+const data = shallowRef([])
+
+// 热更新测试 - 修改这个值来测试热更新
+const hotReloadTest = ref('热更新测试 1')
+
+onBeforeMount(() => {
+  curl({
+    url: 'http://127.0.0.1:3000/api/project/list',
+    method: 'get',
+    params: {
+      proj_key: 'abc',
+    },
+  }).then((res) => {
+    data.value = res.data
+  })
+})
 </script>
 
-<template lang="pug">
-h1 Page 1
-p Welcome to Page 1
-p {{ a }}
+<template>
+  <div>
+    <!-- 热更新测试区域 -->
+    <div style="padding: 20px; background: #f0f0f0; margin-bottom: 20px; border-radius: 8px;">
+      <h3>{{ hotReloadTest }}</h3>
+      <p>当前时间: {{ new Date().toLocaleTimeString() }}</p>
+      <p>计数器: {{ a }}</p>
+      <ElButton @click="a++">
+        点击 +1
+      </ElButton>
+    </div>
+
+    <h1>test</h1>
+    <ElTable :data="data" style="width: 100%">
+      <ElTableColumn prop="date" label="Date" width="180" />
+      <ElTableColumn prop="name" label="Name" width="180" />
+      <ElTableColumn prop="address" label="Address" />
+    </ElTable>
+  </div>
 </template>
 
 <style scoped>
@@ -21,5 +50,9 @@ h1 {
 
 p {
     color: blue;
+}
+
+h3, h4 {
+    color: green;
 }
 </style>

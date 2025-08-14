@@ -2,6 +2,9 @@ import type { Configuration } from 'webpack'
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import glob from 'tiny-glob'
+import AutoImport from 'unplugin-auto-import/webpack'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/webpack'
 import { VueLoaderPlugin } from 'vue-loader'
 import webpack from 'webpack'
 
@@ -15,20 +18,33 @@ export async function getCommonConfig(): Promise<Configuration> {
   }, {})
 
   const htmlPluginList = Object.keys(entry).map((name) => {
+    // https://github.com/jantimon/html-webpack-plugin#options
     return new HtmlWebpackPlugin({
-      template: path.resolve(`app/views/entry.pug`),
-      filename: path.resolve(`dist/${name}.html`),
+      // https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
+      template: path.resolve(`app/pages/templates/entry.pug`),
+      filename: path.resolve(`app/public/${name}.html`),
       chunks: [name],
+      inject: true,
+      publicPath: 'auto',
     })
   })
 
   return {
     entry,
+    output: {
+      path: path.resolve('app/public'),
+      filename: 'static/js/[name]_[chunkhash:8].bundle.js',
+      publicPath: './',
+      crossOriginLoading: 'anonymous',
+      clean: true,
+    },
     module: {
       rules: [
         {
           test: /\.vue$/,
-          use: 'vue-loader',
+          use: {
+            loader: 'vue-loader',
+          },
           exclude: /node_modules/,
         },
         {
@@ -62,10 +78,14 @@ export async function getCommonConfig(): Promise<Configuration> {
               loader: 'css-loader',
               options: {
                 esModule: false,
+                importLoaders: 1,
+                modules: {
+                  auto: true, // 只对包含.module.css的文件启用CSS模块
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                },
               },
             },
           ],
-          exclude: /node_modules/,
         },
         {
         // https://www.npmjs.com/package/pug-plain-loader
@@ -104,15 +124,10 @@ export async function getCommonConfig(): Promise<Configuration> {
       alias: {
         '@': path.resolve('./app'),
         '$pages': path.resolve('./app/pages'),
+        '$common': path.resolve('./app/pages/common'),
       },
     },
-    output: {
-      filename: 'static/js/[name]_[chunkhash:8].bundle.js',
-      path: path.resolve('dist'),
-      publicPath: '/',
-      crossOriginLoading: 'anonymous',
-      clean: true,
-    },
+
     plugins: [
     // 为 vue 文件各部分提供 loader
       new VueLoaderPlugin(),
@@ -120,6 +135,8 @@ export async function getCommonConfig(): Promise<Configuration> {
       // 自动注入第三方库到全局
       new webpack.ProvidePlugin({
         Vue: 'vue',
+        axios: 'axios',
+        _: 'lodash',
       }),
 
       // 定义全局变量
@@ -130,6 +147,15 @@ export async function getCommonConfig(): Promise<Configuration> {
       }),
 
       ...htmlPluginList,
+
+      AutoImport({
+        resolvers: [ElementPlusResolver()],
+        dts: './app/auto-imports.d.ts',
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
+        dts: './app/components.d.ts',
+      }),
     ],
     optimization: {
       // chunk 拆分规则

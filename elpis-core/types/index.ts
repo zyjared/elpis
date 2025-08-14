@@ -40,6 +40,7 @@ interface BaseElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
 
   baseDir: string
   businessDir: string
+  pagesDir: string
 
   // 中间件
   // 注意：Koa 内部有 middleware 属性，注意 s

@@ -1,11 +1,21 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "lib": ["ESNext", "DOM"],
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"],
-      "$pages/*": ["./app/pages/*"]
+      "@/*": [
+        "./app/*"
+      ],
+      "$pages/*": [
+        "./app/pages/*"
+      ],
+      "$common/*": [
+        "./app/pages/common/*"
+      ]
     },
     // 如果无法推断类型，回退到 any 后需要报错
     // https://www.typescriptlang.org/tsconfig/#noImplicitAny
@@ -22,5 +32,10 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue/language-plugin-pug"
+    ]
+  }
 }

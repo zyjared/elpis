@@ -27,6 +27,7 @@
 <!-- - [@koa/send](https://github.com/koajs/send) -->
 - [@koa/bodyparser](https://github.com/koajs/bodyparser)
 - [@koa/multer](https://github.com/koajs/multer)
+- [@koa/cors](https://github.com/koajs/cors)
 - [koa-logger](https://github.com/koajs/logger)
 
 ## 其他
@@ -41,3 +42,4 @@
 - [js-md5](https://www.jsdelivr.com/package/npm/js-md5)
 - [ajv](https://github.com/ajv-validator/ajv)
 - [@vue/tsconfig](https://github.com/vuejs/tsconfig#readme)
+- [element-plus](https://element-plus.org/zh-CN/)
