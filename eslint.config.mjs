@@ -15,8 +15,6 @@ export default antfu({
     '.gitignore',
     'pnpm-lock.yaml',
     'package-lock.json',
-    'package.json',
-    'tsconfig.json',
     // FIXME: 需要支持
     '**/*.pug',
   ],
