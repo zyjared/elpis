@@ -27,8 +27,8 @@ export async function getDevConfig() {
     // https://www.webpackjs.com/configuration/dev-server/
     devServer: {
       static: {
-        // FIXME: 不能修改该了是 common.config 的配置造成的
-        // HtmlWebpackPlugin 配置项不是可配置的，导致了该问题
+        // FIXME: 不能修改该路径，是 common.config 的配置造成的
+        // common 中 的 HtmlWebpackPlugin 配置项不是可配置的，导致了该问题
         // 暂不处理
         directory: path.resolve('./app/public'),
       },
