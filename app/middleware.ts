@@ -8,6 +8,8 @@ import koaStatic from 'koa-static'
 import pug from 'pug'
 
 export default function (app: ElpisApp) {
+  const { env } = app
+
   // 允许跨域
   app.use(cors())
 
@@ -20,14 +22,16 @@ export default function (app: ElpisApp) {
   // 模板引擎
   app.use(async (ctx, next) => {
     ctx.render = (template: string, data = {}) => {
-      const templatePath = path.join(app.pagesDir, `${template}.pug`)
-      ctx.type = 'text/html'
+      if (env.prod) {
+        const templatePath = path.join(app.pagesDir, `${template}.pug`)
+        ctx.type = 'text/html'
 
-      if (!fs.existsSync(templatePath)) {
-        ctx.throw(404, 'template not found')
+        if (!fs.existsSync(templatePath)) {
+          ctx.throw(404, 'template not found')
+        }
+
+        ctx.body = pug.renderFile(templatePath, data)
       }
-
-      ctx.body = pug.renderFile(templatePath, data)
     }
     await next()
   })

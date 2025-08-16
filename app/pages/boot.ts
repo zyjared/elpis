@@ -4,6 +4,8 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import 'element-plus/dist/index.css'
+import '@/pages/asserts/normalize.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 interface BootOptions {
   routes?: RouteRecordRaw[]

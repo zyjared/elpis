@@ -1,8 +1,8 @@
 import type { Context } from 'koa'
 import type { ControllerModule, ElpisApp } from '../../elpis-core/types'
 
-const controller: ControllerModule = (app) => {
-  return class BaseController {
+function controller(app: ElpisApp) {
+  const BaseController = class {
     app: ElpisApp
     config: ElpisApp['config']
     service: ElpisApp['service']
@@ -37,6 +37,8 @@ const controller: ControllerModule = (app) => {
       }
     }
   }
+
+  return BaseController
 }
 
 export default controller

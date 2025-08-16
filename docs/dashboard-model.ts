@@ -10,7 +10,6 @@ interface BaseMenuItem {
   name: string
 }
 
-// 基础配置类型
 interface IframeConfig {
   path: string
 }
@@ -37,7 +36,7 @@ interface CustomConfig {
 }
 
 interface SiderConfig {
-  menu: ModuleMenuItem<'iframe' | 'schema' | 'custom'>[]
+  menu: Array<ModuleMenuItem<'iframe'> | ModuleMenuItem<'schema'> | ModuleMenuItem<'custom'>>
 }
 
 interface ModuleConfigMap {
@@ -48,10 +47,10 @@ interface ModuleConfigMap {
 }
 
 type ModuleMenuItem<T extends keyof ModuleConfigMap> = BaseMenuItem & {
-  menuType: 'module'
-  moduleType: T
+  menuType?: 'module'
+  moduleType?: T
 } & {
-  [K in `${T}Config`]: ModuleConfigMap[T]
+  [K in `${T}Config`]?: ModuleConfigMap[T]
 }
 
 type AnyModuleMenuItem
@@ -66,13 +65,18 @@ interface GroupMenuItem extends BaseMenuItem {
 }
 
 export interface DashboardModel {
+  key?: string
   mode: 'dashboard'
+  name: string
+  desc?: string
+  homePage?: string
   menu: Array<GroupMenuItem | AnyModuleMenuItem>
 }
 
 // 示例用法
-export const dashboardModel: DashboardModel = {
+export const exampleModel: DashboardModel = {
   mode: 'dashboard',
+  name: 'Dashboard',
   menu: [
     {
       key: 'dashboard',

@@ -1,0 +1,313 @@
+[
+  {
+    "project": {
+      "pdd": {
+        "mode": "dashboard",
+        "name": "电商系统",
+        "menu": [
+          {
+            "key": "product",
+            "name": "商品管理（拼多多）",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "order",
+            "name": "订单管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "client",
+            "name": "客户管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/client"
+            }
+          },
+          {
+            "key": "data",
+            "name": "数据分析",
+            "menuType": "module",
+            "moduleType": "sider",
+            "siderConfig": {
+              "menu": [
+                {
+                  "key": "analysis",
+                  "name": "电商罗盘",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/pdd"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "key": "search",
+            "name": "信息查询",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/pdd"
+            }
+          }
+        ],
+        "key": "pdd"
+      },
+      "taobao": {
+        "mode": "dashboard",
+        "name": "淘宝电商系统",
+        "menu": [
+          {
+            "key": "product",
+            "name": "商品管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "order",
+            "name": "订单管理",
+            "menuType": "module",
+            "moduleType": "iframe",
+            "customConfig": {
+              "path": "/taobao"
+            },
+            "iframeConfig": {
+              "path": "https://zyjared.com"
+            }
+          },
+          {
+            "key": "client",
+            "name": "客户管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/client"
+            }
+          },
+          {
+            "key": "operating",
+            "name": "运营活动",
+            "menuType": "module",
+            "moduleType": "sider",
+            "siderConfig": {
+              "menu": [
+                {
+                  "key": "coupon",
+                  "name": "优惠券",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/taobao"
+                  }
+                },
+                {
+                  "key": "limited",
+                  "name": "限量购",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/taobao"
+                  }
+                },
+                {
+                  "key": "festival",
+                  "name": "节日活动",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/taobao"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "key": "taobao"
+      }
+    },
+    "model": {
+      "mode": "dashboard",
+      "name": "电商系统",
+      "menu": [
+        {
+          "key": "product",
+          "name": "商品管理",
+          "menuType": "module",
+          "moduleType": "custom",
+          "customConfig": {
+            "path": "/taobao"
+          }
+        },
+        {
+          "key": "order",
+          "name": "订单管理",
+          "menuType": "module",
+          "moduleType": "custom",
+          "customConfig": {
+            "path": "/taobao"
+          }
+        },
+        {
+          "key": "client",
+          "name": "客户管理",
+          "menuType": "module",
+          "moduleType": "custom",
+          "customConfig": {
+            "path": "/client"
+          }
+        }
+      ],
+      "key": "buiness"
+    }
+  },
+  {
+    "project": {
+      "bilibili": {
+        "mode": "dashboard",
+        "name": "B站课程",
+        "menu": [
+          {
+            "key": "video",
+            "name": "视频管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "user",
+            "name": "用户管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "course-material",
+            "name": "课程资料",
+            "menuType": "module",
+            "moduleType": "sider",
+            "siderConfig": {
+              "menu": [
+                {
+                  "key": "pdf",
+                  "name": "PDF",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/todo"
+                  }
+                },
+                {
+                  "key": "excel",
+                  "name": "Excel",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/todo"
+                  }
+                },
+                {
+                  "key": "ppt",
+                  "name": "PPT",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/todo"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "key": "bilibili",
+        "desc": "B站课程管理系统"
+      },
+      "douyin": {
+        "mode": "dashboard",
+        "name": "抖音课程",
+        "menu": [
+          {
+            "key": "video",
+            "name": "视频管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "user",
+            "name": "用户管理",
+            "menuType": "module",
+            "moduleType": "custom",
+            "customConfig": {
+              "path": "/taobao"
+            }
+          },
+          {
+            "key": "traffic",
+            "name": "流量管理",
+            "menuType": "module",
+            "moduleType": "sider",
+            "siderConfig": {
+              "menu": [
+                {
+                  "key": "user-traffic",
+                  "name": "学员流量",
+                  "menuType": "module",
+                  "moduleType": "custom",
+                  "customConfig": {
+                    "path": "/taobao"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "key": "douyin",
+        "desc": "抖音课程管理系统"
+      }
+    },
+    "model": {
+      "mode": "dashboard",
+      "name": "课程系统",
+      "menu": [
+        {
+          "key": "video",
+          "name": "视频管理",
+          "menuType": "module",
+          "moduleType": "custom",
+          "customConfig": {
+            "path": "/taobao"
+          }
+        },
+        {
+          "key": "user",
+          "name": "用户管理",
+          "menuType": "module",
+          "moduleType": "custom",
+          "customConfig": {
+            "path": "/taobao"
+          }
+        }
+      ],
+      "key": "course"
+    }
+  }
+]

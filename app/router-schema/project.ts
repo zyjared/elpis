@@ -17,6 +17,9 @@ const projectSchema: RouterSchemaModule = {
       params: {},
     },
   },
+  '/api/project/model_list': {
+    get: {},
+  },
 }
 
 export default projectSchema

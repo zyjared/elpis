@@ -2,6 +2,7 @@ import type { AxiosError, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import md5 from 'md5'
+import { withBase } from './url'
 
 /**
  * 请求头扩展加入 s_t 和 s_sign 字段
@@ -53,7 +54,7 @@ instance.interceptors.request.use((config: CurlRequestConfig) => {
 
     ...rest,
 
-    url,
+    url: withBase(url || ''),
     headers: {
       ...headers,
       s_t: Date.now(),

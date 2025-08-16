@@ -3,6 +3,8 @@ import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import glob from 'tiny-glob'
 import AutoImport from 'unplugin-auto-import/webpack'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/webpack'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/webpack'
 import { VueLoaderPlugin } from 'vue-loader'
@@ -39,6 +41,7 @@ export async function getCommonConfig(): Promise<Configuration> {
       clean: true,
     },
     module: {
+      unsafeCache: false,
       rules: [
         {
           test: /\.vue$/,
@@ -71,9 +74,10 @@ export async function getCommonConfig(): Promise<Configuration> {
           },
         },
         {
-          test: /\.css$/,
+          test: /\.s?[ac]ss$/i,
           use: [
             'vue-style-loader',
+            // 'style-loader',
             {
               loader: 'css-loader',
               options: {
@@ -85,6 +89,7 @@ export async function getCommonConfig(): Promise<Configuration> {
                 },
               },
             },
+            'sass-loader',
           ],
         },
         {
@@ -149,14 +154,31 @@ export async function getCommonConfig(): Promise<Configuration> {
       ...htmlPluginList,
 
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          ElementPlusResolver(),
+          IconsResolver({
+            prefix: 'Icon',
+          }),
+        ],
         dts: './app/auto-imports.d.ts',
       }),
+
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          IconsResolver({
+            enabledCollections: ['ep'],
+          }),
+          ElementPlusResolver(),
+        ],
+
         dts: './app/components.d.ts',
       }),
+
+      Icons({
+        autoInstall: true,
+      }),
     ],
+
     optimization: {
       // chunk 拆分规则
       // https://webpack.docschina.org/configuration/optimization/#optimizationsplitchunks
@@ -168,13 +190,15 @@ export async function getCommonConfig(): Promise<Configuration> {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendor',
             chunks: 'all',
-            priority: 99,
+            priority: 80,
+            enforce: true,
           },
+          // 公共代码
           common: {
             name: 'common',
             minChunks: 2,
-            minSize: 1,
             reuseExistingChunk: true,
+            priority: 10,
           },
         },
       },

@@ -2,7 +2,8 @@ import type { RouterModule } from '../../elpis-core/types'
 
 const routerModule: RouterModule = (app, router) => {
   router.get('/view/:id', async (ctx) => {
-    ctx.render('view', { id: ctx.params.id })
+    const pageName = ctx.params.id
+    ctx.render(`view/${pageName}`)
   })
 }
 

@@ -1,8 +1,12 @@
 import type { ElpisApp, ServiceModule } from '../../elpis-core/types'
+import { loadModel } from '../../model'
+
 import buildBaseService from './base'
 
 const projectService: ServiceModule = (_app: ElpisApp) => {
   const BaseService = buildBaseService(_app)
+  const modelList = loadModel(_app)
+
   return class ProjectService extends BaseService {
     getList() {
       return [
@@ -33,6 +37,10 @@ const projectService: ServiceModule = (_app: ElpisApp) => {
       return {
         'test ': '测试 post 成功',
       }
+    }
+
+    getModelList() {
+      return modelList
     }
   }
 }

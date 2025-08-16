@@ -1,6 +1,8 @@
-import elpisCore from './elpis-core'
+import { Elpis } from './elpis-core'
 
-elpisCore.start({
+const elpis = new Elpis()
+
+elpis.start({
   homePage: '/',
   businessDir: './app',
   pagesDir: './app/public',

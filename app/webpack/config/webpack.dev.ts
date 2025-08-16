@@ -19,9 +19,9 @@ export async function getDevConfig() {
 
   return merge<DevConfig>(commonConfig, {
     mode: 'development',
-    // stats: {
-    //   preset: 'minimal',
-    // },
+    stats: {
+      preset: 'minimal',
+    },
     devtool: 'inline-source-map',
 
     // https://www.webpackjs.com/configuration/dev-server/
@@ -44,6 +44,13 @@ export async function getDevConfig() {
       headers: {
         'Access-Control-Allow-Origin': '*',
       },
+      proxy: [
+        {
+          context: '/api',
+          target: 'http://127.0.0.1:3000',
+          changeOrigin: true,
+        },
+      ],
     },
     // performance: {
     //   hints: false,
@@ -55,6 +62,9 @@ export async function getDevConfig() {
     // https://www.webpackjs.com/guides/development/#using-webpack-dev-server
     optimization: {
       runtimeChunk: 'single',
+      removeAvailableModules: false,
+      removeEmptyChunks: false,
+      splitChunks: false,
     },
     output: {
       filename: 'js/[name]_[chunkhash:8].bundle.js',
