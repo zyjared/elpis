@@ -1,7 +1,25 @@
 import type { RouterSchemaModule } from '../../elpis-core/types'
 
 const projectSchema: RouterSchemaModule = {
-  '/api/project/list': {
+  '/api/project/model_list': {
+    get: {},
+  },
+  '/api/project/project_list': {
+    get: {
+      query: {
+        type: 'object',
+        properties: {
+          model_key: {
+            type: 'string',
+            description: '模型 key',
+          },
+        },
+      },
+      body: {},
+      params: {},
+    },
+  },
+  '/api/project/project': {
     get: {
       query: {
         type: 'object',
@@ -13,12 +31,7 @@ const projectSchema: RouterSchemaModule = {
         },
         required: ['proj_key'],
       },
-      body: {},
-      params: {},
     },
-  },
-  '/api/project/model_list': {
-    get: {},
   },
 }
 

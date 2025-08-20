@@ -86,6 +86,7 @@ export async function loadModel(app: ElpisApp) {
 
       modelItem.project[projectKey] = module.default
       modelItem.project[projectKey].key = projectKey
+      modelItem.project[projectKey].modelKey = moduleKey
     }
 
     if (type === 'model') {

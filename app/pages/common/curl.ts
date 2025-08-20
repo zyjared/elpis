@@ -3,7 +3,6 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import md5 from 'md5'
 import { withBase } from './url'
-
 /**
  * 请求头扩展加入 s_t 和 s_sign 字段
  */
@@ -18,6 +17,7 @@ type CurlRequestHeader = AxiosRequestHeaders & {
 interface CurlRequestConfig<D = any> extends AxiosRequestConfig<D> {
   errorMessage?: string
   headers: CurlRequestHeader
+  onError?: (msg: string | undefined) => void
 }
 
 /**
@@ -64,21 +64,27 @@ instance.interceptors.request.use((config: CurlRequestConfig) => {
 })
 
 instance.interceptors.response.use((res: CurlResponse) => {
-  const resData = res.data
+  const { data: resData, config } = res
+
+  const {
+    onError = ElMessage.error,
+    errorMessage,
+  } = config
+
   const { success } = resData
   if (!success) {
     const { message, code } = resData
     if (code === 442) {
-      ElMessage.error('请求参数错误')
+      onError('请求参数错误')
     }
     else if (code === 445) {
-      ElMessage.error('请求不合法')
+      onError('请求不合法')
     }
     else if (code === 50000) {
-      ElMessage.error(message)
+      onError(message)
     }
     else {
-      ElMessage.error(res.config.errorMessage)
+      onError(errorMessage)
     }
 
     console.error(message)
@@ -112,7 +118,9 @@ instance.interceptors.response.use((res: CurlResponse) => {
   }
 
   // 显示错误消息
-  ElMessage.error(errorMessage)
+  if (document) {
+    ElMessage.error(errorMessage)
+  }
   console.error('Request Error:', error)
 
   return error

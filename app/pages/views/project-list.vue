@@ -30,6 +30,32 @@ function onEnter(proj: DtoProject) {
 }
 
 getModelList()
+
+function testAPI() {
+  curl({
+    url: '/api/project/project_list',
+    method: 'get',
+    params: {
+      model_key: 'buiness',
+    },
+  }).then((res) => {
+    // eslint-disable-next-line no-console
+    console.log('testAPI', res)
+  })
+
+  curl({
+    url: '/api/project/project',
+    method: 'get',
+    params: {
+      proj_key: 'pdd',
+    },
+  }).then((res) => {
+    // eslint-disable-next-line no-console
+    console.log('testAPI', res)
+  })
+}
+
+testAPI()
 </script>
 
 <template>
@@ -96,7 +122,6 @@ getModelList()
 }
 
 .project-list {
-    margin: 0 50px;
 
     .project-card {
          margin-right: 30px;

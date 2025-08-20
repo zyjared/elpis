@@ -66,6 +66,7 @@ interface GroupMenuItem extends BaseMenuItem {
 
 export interface DashboardModel {
   key?: string
+  modelKey?: string
   mode: 'dashboard'
   name: string
   desc?: string

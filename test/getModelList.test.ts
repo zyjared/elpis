@@ -24,9 +24,30 @@ describe('测试 project 相关接口', () => {
     const res = await curl({
       url: `${baseUrl}/api/project/model_list`,
       method: 'get',
+      onError: console.warn,
     })
 
     expect(res.success).toBe(true)
     expect(res.data.length).toBeGreaterThan(0)
+  })
+
+  it('get /api/project/project_list', async () => {
+    const res = await curl({
+      url: `${baseUrl}/api/project/project_list`,
+      onError: console.warn,
+    })
+
+    expect(res.success).toBe(true)
+    expect(res.data.length).toBeGreaterThan(0)
+  })
+
+  it('get /api/project/project', async () => {
+    const res = await curl({
+      url: `${baseUrl}/api/project/project?proj_key=pdd`,
+      onError: console.warn,
+    })
+
+    expect(res.success).toBe(true)
+    expect(res.data).toBeTruthy()
   })
 })
