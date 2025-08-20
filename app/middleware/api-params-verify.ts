@@ -58,7 +58,7 @@ const apiParamsVerify: MiddlewareModule = (app) => {
         ctx.body = {
           success: false,
           message: `request validate failed: ${JSON.stringify(validate?.errors)}`,
-          code: 402,
+          code: 442,
         }
         return
       }

@@ -41,13 +41,22 @@ describe('测试 project 相关接口', () => {
     expect(res.data.length).toBeGreaterThan(0)
   })
 
-  it('get /api/project/project', async () => {
+  it('get /api/project/project 有参数', async () => {
     const res = await curl({
-      url: `${baseUrl}/api/project/project?proj_key=pdd`,
+      url: `${baseUrl}/api/project?proj_key=pdd`,
       onError: console.warn,
     })
 
     expect(res.success).toBe(true)
     expect(res.data).toBeTruthy()
+  })
+  it('get /api/project/project 无参数', async () => {
+    const res = await curl({
+      url: `${baseUrl}/api/project`,
+      onError: console.warn,
+    })
+
+    expect(res.success).toBe(false)
+    expect(res.code).toBe(400)
   })
 })

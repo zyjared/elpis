@@ -44,7 +44,7 @@ function testAPI() {
   })
 
   curl({
-    url: '/api/project/project',
+    url: '/api/project',
     method: 'get',
     params: {
       proj_key: 'pdd',

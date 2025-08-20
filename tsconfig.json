@@ -15,6 +15,9 @@
       ],
       "$common/*": [
         "./app/pages/common/*"
+      ],
+      "$widgets/*": [
+        "./app/pages/widgets/*"
       ]
     },
     // 如果无法推断类型，回退到 any 后需要报错

@@ -19,7 +19,7 @@ const projectSchema: RouterSchemaModule = {
       params: {},
     },
   },
-  '/api/project/project': {
+  '/api/project': {
     get: {
       query: {
         type: 'object',

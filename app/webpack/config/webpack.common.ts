@@ -130,6 +130,7 @@ export async function getCommonConfig(): Promise<Configuration> {
         '@': path.resolve('./app'),
         '$pages': path.resolve('./app/pages'),
         '$common': path.resolve('./app/pages/common'),
+        '$widgets': path.resolve('./app/pages/widgets'),
       },
     },
 
