@@ -1,26 +1,42 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "jsx": "preserve",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
     "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./app/*"]
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./app/*"
+      ]
     },
-    "resolveJsonModule": true,
-    "strict": true,
-    "noEmit": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
+    // 如果无法推断类型，回退到 any 后需要报错
+    // https://www.typescriptlang.org/tsconfig/#noImplicitAny
+    "noImplicitAny": true,
+    "outDir": "./dist/"
+    // "verbatimModuleSyntax": true
   },
   "include": [
-    "elpis-core/**/*"
+    "elpis-core/**/*.ts",
+    "elpis-core/**/*.d.ts",
+    "app/**/*.ts",
+    "app/**/*.d.ts",
+    "app/**/*.vue",
+    "server/**/*.ts",
+    "server/**/*.d.ts",
+    "types/**/*.ts",
+    "shared/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "node_modules"
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue/language-plugin-pug"
+    ]
+  }
 }

@@ -1,9 +1,0 @@
-import type { RouterModule } from '../../elpis-core/types'
-
-const routerModule: RouterModule = (app, router) => {
-  router.get('/view/:id', async (ctx) => {
-    ctx.render('view', { id: ctx.params.id })
-  })
-}
-
-export default routerModule

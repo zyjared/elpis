@@ -1,3 +1,5 @@
+import type { ElpisApp } from '.'
+
 export interface ElpisStartOptions {
   /**
    * 基础路径
@@ -5,17 +7,30 @@ export interface ElpisStartOptions {
    * @default process.cwd()
    */
   baseDir?: string
+
   /**
-   * 业务文件路径
+   * 后端路径
+   *
+   * @default './server'
+   */
+  serverDir?: string
+
+  /**
+   * 前端路径
    *
    * @default './app'
    */
-  businessDir?: string
+  appDir?: string
 
   /**
-   * 主页
+   * 静态资源路径
    *
-   * 发生 404 时，重定向到主页
+   * @default './public'
    */
-  homePage?: string
+  publicDir?: string
+
+  /**
+   * 开发时回调
+   */
+  onDev?: (app: ElpisApp) => Promise<void> | void
 }
