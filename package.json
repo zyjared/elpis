@@ -17,7 +17,7 @@
     "frontend:dev": "tsx --max_old_space_size=4096 app/webpack/dev.ts",
     "frontend:build": "tsx --max_old_space_size=4096 app/webpack/build.ts",
     "frontend:preview": "python -m http.server -b 127.0.0.1 -d dist",
-    "dev": "set NODE_ENV=development && tsx watch index.ts",
+    "dev": "set NODE_ENV=development && tsx watch dev.ts",
     "beta": "set NODE_ENV=beta && tsx watch index.ts",
     "prod": "set NODE_ENV=production && tsx watch index.ts",
     "typecheck": "tsc --noEmit",
@@ -91,7 +91,9 @@
     "vue-loader": "^17.4.2",
     "vue-style-loader": "^4.1.3",
     "webpack": "^5.101.0",
+    "webpack-dev-middleware": "^7.4.2",
     "webpack-dev-server": "^5.2.2",
+    "webpack-hot-middleware": "^2.26.1",
     "webpack-merge": "^6.0.1"
   },
   "config": {

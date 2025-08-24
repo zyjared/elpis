@@ -22,8 +22,10 @@ import fs from 'fs-extra'
  * ```
  */
 export async function configLoader(app: ElpisApp) {
+  const { baseDir } = app.options
+
   // 找到 config 目录
-  const configPath = resolve(app.baseDir, 'config')
+  const configPath = resolve(baseDir, 'config')
 
   // 获取 default.config
   const ext = app.env.prod ? 'js' : 'ts'

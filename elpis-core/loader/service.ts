@@ -18,12 +18,14 @@ import glob from 'tiny-glob'
  * ```
  */
 export async function serviceLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   // 为 app 添加 service 属性
   const service: ElpisApp['service'] = {}
   app.service = service
 
   // 遍历 app/service 目录下的所有文件
-  const servicePath = resolve(app.businessDir, 'service')
+  const servicePath = resolve(serverDir, 'service')
 
   // 如果目录不存在，tiny-glob 会报错
   if (!fs.existsSync(servicePath))

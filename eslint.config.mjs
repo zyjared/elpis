@@ -5,6 +5,7 @@ export default antfu({
   vue: true,
 
   ignores: [
+    'public/**',
     'node_modules/**',
     'dist/**',
     'logs/**',

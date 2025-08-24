@@ -18,12 +18,14 @@ import glob from 'tiny-glob'
  * ```
  */
 export async function middlewaresLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   // 为 app 添加 middlewares 属性
   const middlewares: ElpisApp['middlewares'] = {}
   app.middlewares = middlewares
 
   // 遍历 app/middleware 目录下的所有文件
-  const middlewarePath = resolve(app.businessDir, 'middleware')
+  const middlewarePath = resolve(serverDir, 'middleware')
 
   // 如果目录不存在，tiny-glob 会报错
   if (!fs.existsSync(middlewarePath))

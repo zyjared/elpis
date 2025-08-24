@@ -16,8 +16,10 @@ import glob from 'tiny-glob'
  * ```
  */
 export async function extendLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   // 遍历 app/extend 目录下的所有文件
-  const extendPath = resolve(app.businessDir, 'extend')
+  const extendPath = resolve(serverDir, 'extend')
 
   // 如果目录不存在，tiny-glob 会报错
   if (!fs.existsSync(extendPath))
@@ -87,6 +89,8 @@ export async function extendLoader(app: ElpisApp) {
     const { name, module, file } = result
 
     try {
+      // eslint-disable-next-line ts/ban-ts-comment
+      // @ts-expect-error
       app[name] = module.default(app)
     }
     catch (error) {

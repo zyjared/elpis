@@ -10,8 +10,14 @@ import Components from 'unplugin-vue-components/webpack'
 import { VueLoaderPlugin } from 'vue-loader'
 import webpack from 'webpack'
 
-export async function getCommonConfig(): Promise<Configuration> {
-  const entryList = await glob('app/pages/**/entry.*.ts')
+export async function getCommonConfig(options: {
+  outputDir?: string
+} = {}): Promise<Configuration> {
+  const {
+    outputDir = './dist',
+  } = options
+
+  const entryList = await glob(`app/views/**/entry.*.ts`)
 
   const entry = entryList.reduce<Record<string, string>>((acc, cur) => {
     const filepath = path.resolve(cur)
@@ -23,8 +29,8 @@ export async function getCommonConfig(): Promise<Configuration> {
     // https://github.com/jantimon/html-webpack-plugin#options
     return new HtmlWebpackPlugin({
       // https://github.com/jantimon/html-webpack-plugin/blob/main/docs/template-option.md
-      template: path.resolve(`app/pages/templates/entry.pug`),
-      filename: path.resolve(`app/public/${name}.html`),
+      template: path.resolve(`app/templates/entry.pug`),
+      filename: path.resolve(`${outputDir}/${name}.html`),
       chunks: [name],
       inject: true,
       publicPath: 'auto',
@@ -34,7 +40,7 @@ export async function getCommonConfig(): Promise<Configuration> {
   return {
     entry,
     output: {
-      path: path.resolve('app/public'),
+      path: path.resolve(outputDir),
       filename: 'static/js/[name]_[chunkhash:8].bundle.js',
       publicPath: './',
       crossOriginLoading: 'anonymous',
@@ -127,10 +133,8 @@ export async function getCommonConfig(): Promise<Configuration> {
     resolve: {
       extensions: ['.ts', '.vue', '.css', '.tsx', '.js', '.pug'],
       alias: {
+        '~': path.resolve('./'),
         '@': path.resolve('./app'),
-        '$pages': path.resolve('./app/pages'),
-        '$common': path.resolve('./app/pages/common'),
-        '$widgets': path.resolve('./app/pages/widgets'),
       },
     },
 

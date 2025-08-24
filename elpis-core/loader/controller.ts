@@ -18,12 +18,14 @@ import glob from 'tiny-glob'
  * ```
  */
 export async function controllerLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   // 为 app 添加 controller 属性
   const controller: ElpisApp['controller'] = {}
   app.controller = controller
 
   // 遍历 app/controller 目录下的所有文件
-  const controllerPath = resolve(app.businessDir, 'controller')
+  const controllerPath = resolve(serverDir, 'controller')
 
   // 如果目录不存在，tiny-glob 会报错
   if (!fs.existsSync(controllerPath))

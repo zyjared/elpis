@@ -1,5 +1,6 @@
 import type { Server } from 'node:http'
-import type { ElpisApp, ElpisStartOptions } from './types'
+import type { ElpisApp } from './types'
+import type { ElpisStartOptions } from './types/options'
 import { createServer } from 'node:http'
 import path from 'node:path'
 import process from 'node:process'
@@ -26,8 +27,16 @@ const {
 } = path
 
 export class Elpis {
-  protected server: Server | null = null
-  protected app: ElpisApp | null = null
+  server: Server | null = null
+  app: ElpisApp | null = null
+  options: Required<ElpisStartOptions> = {
+    baseDir: process.cwd(),
+    serverDir: './server',
+    appDir: './app',
+    publicDir: './public',
+    onDev: () => {},
+  }
+
   serverInfo: {
     port: number
     host: string
@@ -43,33 +52,49 @@ export class Elpis {
   }
 
   /**
+   * 配置挂载到 app 上
+   */
+  private mountOptions(options: ElpisStartOptions) {
+    const {
+      baseDir,
+      serverDir,
+      appDir,
+      publicDir,
+      onDev,
+    } = {
+      ...this.options,
+      ...options,
+    }
+
+    const basePath = resolve(baseDir)
+
+    this.options = {
+      baseDir,
+      serverDir: resolve(basePath, serverDir),
+      appDir: resolve(basePath, appDir),
+      publicDir: resolve(basePath, publicDir),
+      onDev,
+    }
+  }
+
+  /**
    * 启动项目
    */
   async start(options: ElpisStartOptions = {}) {
-    const {
-      baseDir = process.cwd(),
-      businessDir = './app',
-      pagesDir = './app/public',
-    } = options
-
-    const basePath = resolve(baseDir)
-    const businessPath = resolve(basePath, businessDir)
-    const pagesPath = resolve(basePath, pagesDir)
+    this.mountOptions(options)
 
     const app = new Koa() as unknown as ElpisApp
     this.app = app
-
-    app.options = options
     app.env = env
-    log('start', 'env is', env.mode)
-
-    app.baseDir = basePath
-    app.businessDir = businessPath
-    app.pagesDir = pagesPath
+    app.options = this.options
 
     // ------------------------------------------------------------
     // 加载中间件
     // ------------------------------------------------------------
+    if (app.env.dev) {
+      await this.options.onDev?.(app)
+    }
+
     await Promise.all([
       middlewaresLoader(app),
       routerSchemaLoader(app),
@@ -84,8 +109,10 @@ export class Elpis {
 
     // 全局中间件
     try {
+      const { serverDir } = this.options
+
       const ext = app.env.prod ? 'js' : 'ts'
-      const modulePath = resolve(app.businessDir, `middleware.${ext}`)
+      const modulePath = resolve(serverDir, `middleware.${ext}`)
 
       if (fs.existsSync(modulePath)) {
         const moduleUrl = new URL(`file://${modulePath}`).href
@@ -110,14 +137,21 @@ export class Elpis {
       this.serverInfo.host = host
       this.serverInfo.url = `http://${host}:${port}`
 
-      app.use(async (ctx, next) => {
-        ctx.render('index')
-        await next()
-      })
+      //   app.use(async (ctx, next) => {
+      //     ctx.render('index')
+      //     await next()
+      //   })
 
       this.server = app.listen(port, host, () => {
+        if (app.env.prod) {
         // eslint-disable-next-line no-console
-        console.clear()
+          console.clear()
+        }
+        else {
+          // eslint-disable-next-line no-console
+          console.table(app.options)
+        }
+
         // eslint-disable-next-line no-console
         console.log(`Server is running on ${this.serverInfo.url}`)
       })

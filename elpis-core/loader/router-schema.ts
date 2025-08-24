@@ -17,9 +17,11 @@ import glob from 'tiny-glob'
  * ```
  */
 export async function routerSchemaLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   let routerSchema: ElpisApp['routerSchema'] = {}
 
-  const routerSchemaPath = resolve(app.businessDir, 'router-schema')
+  const routerSchemaPath = resolve(serverDir, 'router-schema')
 
   if (!fs.existsSync(routerSchemaPath)) {
     app.routerSchema = routerSchema

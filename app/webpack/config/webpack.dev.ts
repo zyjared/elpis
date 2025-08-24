@@ -1,8 +1,6 @@
 import type { Configuration as WebpackConfiguration } from 'webpack'
 import type { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
 import path from 'node:path'
-import fs from 'fs-extra'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 import Webpack from 'webpack'
 import { merge } from 'webpack-merge'
 import { getCommonConfig } from './webpack.common'
@@ -14,8 +12,14 @@ interface DevConfig extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration
 }
 
-export async function getDevConfig() {
-  const commonConfig = await getCommonConfig()
+export async function getDevConfig(options: {
+  outputDir?: string
+} = {}) {
+  const {
+    outputDir = './dist',
+  } = options
+
+  const commonConfig = await getCommonConfig({ outputDir })
 
   return merge<DevConfig>(commonConfig, {
     mode: 'development',
@@ -24,13 +28,19 @@ export async function getDevConfig() {
     },
     devtool: 'inline-source-map',
 
+    // https://github.com/webpack-contrib/webpack-hot-middleware
+    entry: Object.keys(commonConfig.entry as Record<string, string> || {}).reduce((acc, key) => {
+      acc[key] = [
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+        (commonConfig.entry as Record<string, string>)[key],
+      ]
+      return acc
+    }, {} as Record<string, any>),
+
     // https://www.webpackjs.com/configuration/dev-server/
     devServer: {
       static: {
-        // FIXME: 不能修改该路径，是 common.config 的配置造成的
-        // common 中 的 HtmlWebpackPlugin 配置项不是可配置的，导致了该问题
-        // 暂不处理
-        directory: path.resolve('./app/public'),
+        directory: path.resolve(outputDir),
       },
       allowedHosts: 'all',
       historyApiFallback: true,
@@ -41,16 +51,16 @@ export async function getDevConfig() {
           warnings: false,
         },
       },
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-      proxy: [
-        {
-          context: '/api',
-          target: 'http://127.0.0.1:3000',
-          changeOrigin: true,
-        },
-      ],
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //   },
+    //   proxy: [
+    //     {
+    //       context: '/api',
+    //       target: 'http://127.0.0.1:3000',
+    //       changeOrigin: true,
+    //     },
+    //   ],
     },
     // performance: {
     //   hints: false,
@@ -68,7 +78,7 @@ export async function getDevConfig() {
     },
     output: {
       filename: 'js/[name]_[chunkhash:8].bundle.js',
-      path: path.resolve('./app/public/'),
+      path: path.resolve(outputDir),
       clean: true,
       publicPath: '/',
     },

@@ -10,8 +10,10 @@ import glob from 'tiny-glob'
  * 解析所有 app/router 目录下的文件，并挂载到 app 上
  */
 export async function routerLoader(app: ElpisApp) {
+  const { serverDir } = app.options
+
   // router 路径
-  const routerPath = resolve(app.businessDir, 'router')
+  const routerPath = resolve(serverDir, 'router')
 
   if (!fs.existsSync(routerPath)) {
     return
