@@ -1,23 +1,7 @@
 import type { ControllerModule, ElpisContext } from '../../elpis-core/types'
-import type { ModelItem } from '../model'
-import type { DashboardModel } from '~/types/model'
+import type { DtoModel, DtoModelItem, DtoProject } from '../../types/model'
+import type { DashboardModel, ModelItem } from '../model'
 import buildBaseController from './base'
-
-export interface DtoModel {
-  key: string
-  name: string
-  desc: string
-  modelKey?: string
-}
-
-export interface DtoProject extends DtoModel {
-  homePage: string
-}
-
-export interface DtoModelItem {
-  model: DtoModel
-  project: Record<string, DtoProject>
-}
 
 const controller: ControllerModule = (app) => {
   const BaseController = buildBaseController(app)
@@ -30,6 +14,12 @@ const controller: ControllerModule = (app) => {
     update(ctx: ElpisContext) {
       this.app.logger.info('update', ctx.request.body)
       return this.success(ctx, this.service.project.update())
+    }
+
+    getRawModelList(ctx: ElpisContext) {
+      const { project: projectService } = this.app.service
+      const modelList = projectService.getModelList() as ModelItem[]
+      return this.success(ctx, modelList)
     }
 
     /**

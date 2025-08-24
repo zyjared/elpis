@@ -1,8 +1,8 @@
 import process from 'node:process'
 import { Command } from 'commander'
 import webpack from 'webpack'
-import { getDevConfig } from './config/webpack.dev'
-import { getProdConfig } from './config/webpack.prod'
+import { getDevConfig } from '../app/webpack/webpack.dev'
+import { getProdConfig } from '../app/webpack/webpack.prod'
 
 const program = new Command()
 

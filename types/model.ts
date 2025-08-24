@@ -14,7 +14,7 @@ interface IframeConfig {
   path: string
 }
 
-interface SchemaConfigSchema<T> {
+export interface SchemaConfigSchema<T> {
   type: 'object' | 'string' | 'number' | 'boolean' | 'array' | 'null'
   properties: Record<string, SchemaConfigSchema<T> & T>
 }
@@ -54,10 +54,10 @@ export type ModuleMenuItem<T extends keyof ModuleConfigMap> = BaseMenuItem & {
 }
 
 type AnyModuleMenuItem
-      = | ModuleMenuItem<'iframe'>
-        | ModuleMenuItem<'schema'>
-        | ModuleMenuItem<'custom'>
-        | ModuleMenuItem<'sider'>
+          = | ModuleMenuItem<'iframe'>
+            | ModuleMenuItem<'schema'>
+            | ModuleMenuItem<'custom'>
+            | ModuleMenuItem<'sider'>
 
 interface GroupMenuItem extends BaseMenuItem {
   menuType: 'group'
@@ -72,4 +72,20 @@ export interface DashboardModel {
   desc?: string
   homePage?: string
   menu: Array<GroupMenuItem | AnyModuleMenuItem>
+}
+
+export interface DtoModel {
+  key: string
+  name: string
+  desc: string
+  modelKey?: string
+}
+
+export interface DtoProject extends DtoModel {
+  homePage: string
+}
+
+export interface DtoModelItem {
+  model: DtoModel
+  project: Record<string, DtoProject>
 }

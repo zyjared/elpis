@@ -16,7 +16,8 @@ loadProject()
 
 async function loadProjectList() {
   const res = await curl({
-    url: '/api/project/project_list',
+    // url: '/api/project/project_list',
+    url: '/api/project/raw_model_list',
     method: 'get',
   })
 

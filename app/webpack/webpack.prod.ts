@@ -1,4 +1,3 @@
-import path from 'node:path'
 import { merge } from 'webpack-merge'
 import { getCommonConfig } from './webpack.common'
 

@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { curl } from '../app/pages/common/curl'
 import { Elpis } from '../elpis-core'
+import { curl } from '../shared/client/curl'
 
 describe('测试 project 相关接口', () => {
   let app: Elpis
@@ -8,9 +8,9 @@ describe('测试 project 相关接口', () => {
 
   beforeAll(async () => {
     app = await new Elpis().start({
-      homePage: '/',
-      businessDir: './app',
-      pagesDir: './app/public',
+      baseDir: './',
+      serverDir: './server',
+      publicDir: './public',
     })
     baseUrl = app.serverInfo.url
   })
@@ -41,7 +41,7 @@ describe('测试 project 相关接口', () => {
     expect(res.data.length).toBeGreaterThan(0)
   })
 
-  it('get /api/project/project 有参数', async () => {
+  it('get /api/project 有参数', async () => {
     const res = await curl({
       url: `${baseUrl}/api/project?proj_key=pdd`,
       onError: console.warn,
@@ -50,7 +50,7 @@ describe('测试 project 相关接口', () => {
     expect(res.success).toBe(true)
     expect(res.data).toBeTruthy()
   })
-  it('get /api/project/project 无参数', async () => {
+  it('get /api/project 无参数', async () => {
     const res = await curl({
       url: `${baseUrl}/api/project`,
       onError: console.warn,

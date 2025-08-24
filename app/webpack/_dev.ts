@@ -1,9 +1,7 @@
-import path from 'node:path'
-import process from 'node:process'
 import { Command } from 'commander'
 import Webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
-import { getDevConfig } from './config/webpack.dev'
+import { getDevConfig } from './webpack.dev'
 
 const program = new Command()
 

@@ -26,54 +26,60 @@ const {
   resolve,
 } = path
 
+const DEFAULT_OPTIONS: Required<ElpisStartOptions> = {
+  baseDir: process.cwd(),
+  serverDir: './server',
+  appDir: './app',
+  publicDir: './public',
+  onDev: () => {},
+  server: {
+    port: 3000,
+    host: '127.0.0.1',
+    dynamicPort: false,
+  },
+}
+
 export class Elpis {
   server: Server | null = null
   app: ElpisApp | null = null
-  options: Required<ElpisStartOptions> = {
-    baseDir: process.cwd(),
-    serverDir: './server',
-    appDir: './app',
-    publicDir: './public',
-    onDev: () => {},
-  }
-
-  serverInfo: {
-    port: number
-    host: string
-    url: string
-  }
+  options: Required<ElpisStartOptions> = { ...DEFAULT_OPTIONS }
 
   constructor() {
-    this.serverInfo = {
-      port: 3000,
-      host: '127.0.0.1',
-      url: 'http://127.0.0.1:3000',
-    }
   }
 
   /**
    * 配置挂载到 app 上
    */
   private mountOptions(options: ElpisStartOptions) {
-    const {
-      baseDir,
-      serverDir,
-      appDir,
-      publicDir,
-      onDev,
-    } = {
-      ...this.options,
+    const opts = {
+      ...DEFAULT_OPTIONS,
       ...options,
+      server: {
+        ...DEFAULT_OPTIONS.server,
+        ...options.server,
+      },
     }
+
+    const {
+      server,
+      baseDir,
+      appDir,
+      serverDir,
+      publicDir,
+    } = opts
 
     const basePath = resolve(baseDir)
 
     this.options = {
+      ...opts,
       baseDir,
       serverDir: resolve(basePath, serverDir),
       appDir: resolve(basePath, appDir),
       publicDir: resolve(basePath, publicDir),
-      onDev,
+      server: {
+        ...server,
+        url: `http://${server.host}:${server.port}`,
+      },
     }
   }
 
@@ -107,10 +113,9 @@ export class Elpis {
 
     // 单独加载
 
+    const { serverDir, server: serverOpts } = this.options
     // 全局中间件
     try {
-      const { serverDir } = this.options
-
       const ext = app.env.prod ? 'js' : 'ts'
       const modulePath = resolve(serverDir, `middleware.${ext}`)
 
@@ -128,19 +133,12 @@ export class Elpis {
     await routerLoader(app)
 
     try {
-      let port = Number(process.env.PORT) || this.serverInfo.port
-      const host = process.env.IP || this.serverInfo.host
+      let port = Number(process.env.PORT) || serverOpts.port!
+      const host = process.env.IP || serverOpts.host!
 
-      port = await this.findAvailablePort(port)
-
-      this.serverInfo.port = port
-      this.serverInfo.host = host
-      this.serverInfo.url = `http://${host}:${port}`
-
-      //   app.use(async (ctx, next) => {
-      //     ctx.render('index')
-      //     await next()
-      //   })
+      port = serverOpts.dynamicPort
+        ? await this.findAvailablePort(port)
+        : port
 
       this.server = app.listen(port, host, () => {
         if (app.env.prod) {
@@ -153,7 +151,7 @@ export class Elpis {
         }
 
         // eslint-disable-next-line no-console
-        console.log(`Server is running on ${this.serverInfo.url}`)
+        console.log(`Server is running on ${serverOpts.url}`)
       })
     }
     catch (e) {

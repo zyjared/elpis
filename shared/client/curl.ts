@@ -2,7 +2,7 @@ import type { AxiosError, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import md5 from 'md5'
-import { withBase } from './url'
+import { withBase } from '../common/url'
 /**
  * 请求头扩展加入 s_t 和 s_sign 字段
  */
@@ -29,6 +29,9 @@ interface CurlResponseData<T = any> {
   metadata?: any
   message?: string
   code?: number
+  /**
+   * 是否签名
+   */
 }
 
 /**

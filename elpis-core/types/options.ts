@@ -33,4 +33,17 @@ export interface ElpisStartOptions {
    * 开发时回调
    */
   onDev?: (app: ElpisApp) => Promise<void> | void
+
+  server?: {
+    port?: number
+    host?: string
+    url?: string
+
+    /**
+     * 是否动态更换 port
+     *
+     * @default false
+     */
+    dynamicPort?: boolean
+  }
 }
