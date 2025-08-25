@@ -9,13 +9,13 @@ const elpis = new Elpis()
 elpis.start({
   baseDir: './',
   serverDir: './server',
-  publicDir: './public',
+  publicDir: './public/dist',
   server: {
     dynamicPort: false,
   },
   onDev: async (app) => {
     const config = await getDevConfig({
-      outputDir: './public',
+      outputDir: './public/dist',
     })
 
     const compiler = Webpack(config)

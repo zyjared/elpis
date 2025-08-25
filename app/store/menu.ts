@@ -1,4 +1,4 @@
-import type { DashboardModel } from 'docs/dashboard-model'
+import type { DashboardModel } from '~/types/model'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 

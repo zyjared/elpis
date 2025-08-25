@@ -28,7 +28,6 @@ export function boot(page: Component, options: BootOptions = {}) {
       app.use(plugin)
     })
   }
-
   // routes
   if (routes && routes.length > 0) {
     const router = createRouter({

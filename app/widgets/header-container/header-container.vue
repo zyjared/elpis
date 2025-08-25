@@ -18,7 +18,7 @@ function handleUserCommand(command: string) {
       <el-row align="middle" justify="space-between" class="header-row">
         <!-- header 左侧标题 -->
         <el-row align="middle" class="title-panel">
-          <img src="@/asserts/logo.png" alt="logo" class="logo">
+          <img src="/logo.png" alt="logo" class="logo">
           <el-row>{{ title }}</el-row>
         </el-row>
         <!-- header 菜单 -->
@@ -48,7 +48,7 @@ function handleUserCommand(command: string) {
       </el-row>
     </el-header>
     <el-main class="main">
-      <slot name="main" />
+      <slot />
     </el-main>
   </el-container>
 </template>
@@ -73,6 +73,7 @@ function handleUserCommand(command: string) {
         height: 30px;
         border-radius: 50%;
         margin-right: 10px;
+        margin-left: 1em;
       }
     }
 
@@ -82,6 +83,7 @@ function handleUserCommand(command: string) {
         height: 30px;
         border-radius: 50%;
         margin-right: 10px;
+        margin-left: 1em;
       }
 
       .dropdown-link {

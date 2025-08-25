@@ -38,6 +38,7 @@ interface CurlResponseData<T = any> {
  * 响应数据纠正扩展后的 config 字段
  */
 type CurlResponse<T = any, D = any> = AxiosResponse<CurlResponseData<T>, D> & {
+
   config: CurlRequestConfig<D>
 }
 
@@ -134,6 +135,6 @@ export const request = instance
 /**
  * 获取数据，axios 响应是 response.data 部分
  */
-export async function curl<T = any>(config: Partial<CurlRequestConfig>) {
-  return await instance.request<T>(config).then(res => res.data)
+export async function curl<T = any, R = CurlResponseData<T>>(config: Partial<CurlRequestConfig>) {
+  return await instance.request<R>(config).then(res => res.data)
 }

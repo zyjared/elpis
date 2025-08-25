@@ -147,7 +147,10 @@ export class Elpis {
         }
         else {
           // eslint-disable-next-line no-console
-          console.table(app.options)
+          console.table({
+            ...app.options,
+            server: app.options.server.url,
+          })
         }
 
         // eslint-disable-next-line no-console

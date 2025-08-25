@@ -53,16 +53,18 @@ export type ModuleMenuItem<T extends keyof ModuleConfigMap> = BaseMenuItem & {
   [K in `${T}Config`]?: ModuleConfigMap[T]
 }
 
-type AnyModuleMenuItem
+export type AnyModuleMenuItem
           = | ModuleMenuItem<'iframe'>
             | ModuleMenuItem<'schema'>
             | ModuleMenuItem<'custom'>
             | ModuleMenuItem<'sider'>
 
-interface GroupMenuItem extends BaseMenuItem {
+export interface GroupMenuItem extends BaseMenuItem {
   menuType: 'group'
   subMenu: Array<AnyModuleMenuItem | GroupMenuItem>
 }
+
+export type ModelMenuItem = AnyModuleMenuItem | GroupMenuItem
 
 export interface DashboardModel {
   key?: string
@@ -71,7 +73,7 @@ export interface DashboardModel {
   name: string
   desc?: string
   homePage?: string
-  menu: Array<GroupMenuItem | AnyModuleMenuItem>
+  menu: Array<ModelMenuItem>
 }
 
 export interface DtoModel {
@@ -83,6 +85,7 @@ export interface DtoModel {
 
 export interface DtoProject extends DtoModel {
   homePage: string
+  menu: ModelMenuItem[]
 }
 
 export interface DtoModelItem {

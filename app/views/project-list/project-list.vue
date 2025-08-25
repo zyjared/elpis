@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { DtoModelItem, DtoProject } from '~/server/controller/project'
-import { ref } from 'vue'
+import type { DtoModelItem, DtoProject } from '~/types/model'
+import { onBeforeMount, ref } from 'vue'
 import { curl } from '~/shared/client/curl'
 import HeaderContainer from '../../widgets/header-container/header-container.vue'
 
@@ -29,76 +29,50 @@ function onEnter(proj: DtoProject) {
   window.open(proj.homePage, '_blank')
 }
 
-getModelList()
-
-function testAPI() {
-  curl({
-    url: '/api/project/project_list',
-    method: 'get',
-    params: {
-      model_key: 'buiness',
-    },
-  }).then((res) => {
-    // eslint-disable-next-line no-console
-    console.log('testAPI', res)
-  })
-
-  curl({
-    url: '/api/project',
-    method: 'get',
-    params: {
-      proj_key: 'pdd',
-    },
-  }).then((res) => {
-    // eslint-disable-next-line no-console
-    console.log('testAPI', res)
-  })
-}
-
-testAPI()
+onBeforeMount(() => {
+  getModelList()
+})
 </script>
 
 <template>
   <HeaderContainer title="项目列表">
-    <template #main>
-      <div v-loading="loading">
-        <div v-for="item in modelList" :key="item.model?.key">
-          <div class="model-panel">
-            <!-- model -->
-            <el-row align="middle">
-              <div class="title">
-                {{ item.model?.name }}
-              </div>
-            </el-row>
+    <div v-loading="loading">
+      <div v-for="item in modelList" :key="item.model?.key">
+        <div class="model-panel">
+          <!-- model -->
+          <el-row align="middle">
+            <div class="title">
+              {{ item.model?.name }}
+            </div>
+          </el-row>
 
-            <div class="divider" />
+          <div class="divider" />
 
-            <!-- project -->
-            <el-row class="project-list">
-              <el-card v-for="proj in item.project" :key="proj.key" class="project-card">
-                <template #header>
-                  <div class="title">
-                    {{ proj.name }}
-                  </div>
-                </template>
-
-                <div class="content">
-                  {{ proj.desc || '--------' }}
+          <!-- project -->
+          <el-row class="project-list">
+            <el-card v-for="proj in item.project" :key="proj.key" class="project-card">
+              <template #header>
+                <div class="title">
+                  {{ proj.name }}
                 </div>
+              </template>
 
-                <template #footer>
-                  <el-row justify="end">
-                    <el-button link type="primary" @click="onEnter(proj)">
-                      打开
-                    </el-button>
-                  </el-row>
-                </template>
-              </el-card>
-            </el-row>
-          </div>
+              <div class="content">
+                {{ proj.desc || '--------' }}
+              </div>
+
+              <template #footer>
+                <el-row justify="end">
+                  <el-button link type="primary" @click="onEnter(proj)">
+                    打开
+                  </el-button>
+                </el-row>
+              </template>
+            </el-card>
+          </el-row>
         </div>
       </div>
-    </template>
+    </div>
   </HeaderContainer>
 </template>
 
