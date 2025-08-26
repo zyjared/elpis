@@ -3,6 +3,7 @@ import type { DashboardModel } from '~/types/model'
 const model: DashboardModel = {
   mode: 'dashboard',
   name: '淘宝电商系统',
+  homePage: '/todo?proj_key=taobao&key=order',
   menu: [
     {
       key: 'order',

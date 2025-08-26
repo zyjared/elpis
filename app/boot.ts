@@ -2,7 +2,7 @@ import type { Component, Plugin } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import 'element-plus/dist/index.css'
 import '@/asserts/normalize.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
@@ -34,10 +34,11 @@ export function boot(page: Component, options: BootOptions = {}) {
       history: createWebHashHistory(),
       routes,
     })
-    router.isReady().then(() => {
-      app.use(router)
-      app.mount('#root')
-    })
+    // console.log(routes)
+    // router.isReady().then(() => {
+    app.use(router)
+    app.mount('#root')
+    // })
   }
   else {
     app.mount('#root')

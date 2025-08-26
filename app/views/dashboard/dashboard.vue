@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import type { DtoModelItem, DtoProject } from '~/types/model'
+import type { DtoModelItem, DtoProject, ModelMenuItem } from '~/types/model'
+import { ElMessage } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
-import { onBeforeMount, ref } from 'vue'
-// import { useRoute, useRouter } from 'vue-router'
+import { onBeforeMount, onMounted, ref, watch } from 'vue'
+import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router'
 import { useMenuStore } from '@/store/menu'
 import { useProjectStore } from '@/store/project'
 import { curl } from '~/shared/client/curl'
 import SubMenu from './components/the-header/sub-menu/sub-menu.vue'
 import TheHeader from './components/the-header/the-header.vue'
 
-// const route = useRoute()
+const route = useRoute()
+const router = useRouter()
 const menuStore = useMenuStore()
 const projectStore = useProjectStore()
 
 const activeKey = ref('')
 const projectName = ref('')
 
-onBeforeMount(() => {
-  // const projKey = route.params
-//   console.log(route)
+watch(() => route.query, () => {
+  activeKey.value = route.query?.key as string || ''
+  const projKey = route.query?.proj_key as string || ''
+  loadProject(projKey)
+  loadProjectList()
 })
 
-loadProjectList()
-loadProject()
-
 async function loadProjectList() {
-  const res = await curl<DtoModelItem[]>({
+  const res = await curl<DtoProject[]>({
     url: '/api/project/project_list',
-    // url: '/api/project/raw_model_list',
     method: 'get',
   })
 
@@ -38,9 +38,9 @@ async function loadProjectList() {
   projectStore.setProjectList(res.data)
 }
 
-async function loadProject() {
+async function loadProject(projKey: string) {
   const res = await curl<DtoProject>({
-    url: '/api/project?proj_key=pdd',
+    url: `/api/project?proj_key=${projKey}`,
     method: 'get',
   })
 
@@ -53,8 +53,45 @@ async function loadProject() {
   menuStore.setMenuList(menu)
 }
 
+function findMenu(menuList: ModelMenuItem[], key: string): ModelMenuItem | null {
+  for (const item of menuList) {
+    if (item.key === key) {
+      return item
+    }
+    if (item.menuType === 'group' && item.subMenu) {
+      const menu = findMenu(item.subMenu, key)
+      if (menu) {
+        return menu
+      }
+    }
+  }
+  return null
+}
+
 function handleMenuSelect(key: string) {
   activeKey.value = key
+
+  const menu = findMenu(menuStore.menuList, key)
+
+  if (!menu || menu.menuType === 'group') {
+    ElMessage.error('菜单不存在')
+    return
+  }
+
+  const path = menu.moduleType === 'custom' ? menu.customConfig?.path : menu.moduleType
+
+  if (!path) {
+    ElMessage.error('路径错误')
+    return
+  }
+
+  router.push({
+    path: `/${path}`.replace(/\/+/g, '/'),
+    query: {
+      proj_key: route.query?.proj_key as string || '',
+      key,
+    },
+  })
 }
 </script>
 
@@ -77,6 +114,7 @@ function handleMenuSelect(key: string) {
           </template>
         </el-menu>
       </template>
+      <router-view />
     </TheHeader>
   </el-config-provider>
 </template>

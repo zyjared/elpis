@@ -1,4 +1,4 @@
-import type { DtoProject } from '@/controller/project'
+import type { DtoProject } from '~/types/model'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 

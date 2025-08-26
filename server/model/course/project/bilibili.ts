@@ -4,6 +4,7 @@ const model: DashboardModel = {
   mode: 'dashboard',
   name: 'B站课程',
   desc: 'B站课程管理系统',
+  homePage: '/todo?proj_key=bilibili&key=video',
   menu: [
     {
       key: 'course-material',

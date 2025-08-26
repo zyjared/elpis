@@ -3,6 +3,7 @@ import type { DashboardModel } from '~/types/model'
 const model: DashboardModel = {
   mode: 'dashboard',
   name: '电商系统',
+  homePage: '/todo?proj_key=pdd&key=product',
   menu: [
     {
       key: 'product',
@@ -30,11 +31,18 @@ const model: DashboardModel = {
     {
       key: 'search',
       name: '信息查询',
-      menuType: 'module',
-      moduleType: 'custom',
-      customConfig: {
-        path: '/pdd',
-      },
+      menuType: 'group',
+      subMenu: [
+        {
+          key: 'search',
+          name: '信息查询',
+          menuType: 'module',
+          moduleType: 'custom',
+          customConfig: {
+            path: '/pdd',
+          },
+        },
+      ],
     },
   ],
 }

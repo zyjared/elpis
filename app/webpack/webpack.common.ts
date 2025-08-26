@@ -21,7 +21,8 @@ export async function getCommonConfig(options: {
 
   const entry = entryList.reduce<Record<string, string>>((acc, cur) => {
     const filepath = path.resolve(cur)
-    acc[path.basename(filepath, '.ts')] = filepath
+    // 去除 `entry.` 前缀与 `.ts` 后缀
+    acc[path.basename(filepath, '.ts').replace('entry.', '')] = filepath
     return acc
   }, {})
 

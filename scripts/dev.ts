@@ -21,7 +21,7 @@ elpis.start({
     const compiler = Webpack(config)
 
     if (!compiler) {
-      throw new Error('compiler is not defined')
+      throw new Error('compiler 无效')
     }
 
     const devMiddleware = WebpackDevMiddleware(compiler, {

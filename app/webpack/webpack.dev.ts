@@ -43,7 +43,16 @@ export async function getDevConfig(options: {
         directory: path.resolve(outputDir),
       },
       allowedHosts: 'all',
-      historyApiFallback: true,
+      historyApiFallback: {
+        index: '/entry.project-list.html',
+        rewrites: [
+          { from: /^\/$/, to: '/entry.project-list.html' },
+          { from: /^\/project-list/, to: '/entry.project-list.html' },
+          { from: /^\/dashboard/, to: '/entry.dashboard.html' },
+          { from: /^\/page1/, to: '/entry.page1.html' },
+          { from: /^\/page2/, to: '/entry.page2.html' },
+        ],
+      },
       compress: true,
       client: {
         overlay: {

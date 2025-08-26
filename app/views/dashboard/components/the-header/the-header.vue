@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ElMessage } from 'element-plus'
+import { computed, onBeforeMount, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useMenuStore } from '@/store/menu'
 import { useProjectStore } from '@/store/project'
 import HeaderContainer from '@/widgets/header-container/header-container.vue'
@@ -9,13 +11,20 @@ const {
 } = defineProps<{
   projectName: string
 }>()
-// const route = useRoute()
-const menuStore = useMenuStore()
+
+const router = useRouter()
 const projectStore = useProjectStore()
 const showMoreProject = computed(() => projectStore.projectList.length > 1)
 
 function handleProjectCommand(command: string) {
+  const project = projectStore.projectList.find(item => item.key === command)
+  const homePage = project?.homePage
+  if (!homePage) {
+    ElMessage.error('主页地址不存在')
+    return
+  }
 
+  router.push(homePage)
 }
 </script>
 
