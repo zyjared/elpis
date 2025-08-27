@@ -36,7 +36,12 @@ interface CustomConfig {
 }
 
 interface SiderConfig {
-  menu: Array<ModuleMenuItem<'iframe'> | ModuleMenuItem<'schema'> | ModuleMenuItem<'custom'>>
+  menu: Array<
+    ModuleMenuItem<'iframe'>
+    | ModuleMenuItem<'schema'>
+    | ModuleMenuItem<'custom'>
+    | GroupMenuItem
+   >
 }
 
 interface ModuleConfigMap {

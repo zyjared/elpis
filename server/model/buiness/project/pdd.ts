@@ -2,7 +2,7 @@ import type { DashboardModel } from '~/types/model'
 
 const model: DashboardModel = {
   mode: 'dashboard',
-  name: '电商系统',
+  name: '拼多多电商系统',
   homePage: '/todo?proj_key=pdd&key=product',
   menu: [
     {
@@ -24,6 +24,21 @@ const model: DashboardModel = {
             customConfig: {
               path: '/pdd',
             },
+          },
+          {
+            key: 'analysis2',
+            name: '电商罗盘2',
+            menuType: 'group',
+            subMenu: [
+              {
+                key: 'analysis2-1',
+                name: '电商罗盘2-1',
+              },
+              {
+                key: 'analysis2-2',
+                name: '电商罗盘2-2',
+              },
+            ],
           },
         ],
       },

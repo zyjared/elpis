@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { DtoModelItem, DtoProject } from '~/types/model'
+import { ElMessage } from 'element-plus'
 import { onBeforeMount, ref } from 'vue'
 import { curl } from '~/shared/client/curl'
 import HeaderContainer from '../../widgets/header-container/header-container.vue'
@@ -26,7 +27,12 @@ async function getModelList() {
 }
 
 function onEnter(proj: DtoProject) {
-  window.open(proj.homePage, '_blank')
+  const homePage = proj.homePage
+  if (!homePage) {
+    ElMessage.error('该项目没有配置首页')
+    return
+  }
+  window.open(`dashboard.html/#/${homePage}`.replace(/^\/+/, '/'), '_blank')
 }
 
 onBeforeMount(() => {
