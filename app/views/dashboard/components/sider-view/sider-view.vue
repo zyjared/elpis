@@ -14,43 +14,43 @@ const menuStore = useMenuStore()
 const activeKey = ref('')
 const menuList = shallowRef<ModelMenuItem[]>([])
 
-function findCurrentMenu(menuList: ModelMenuItem[], key: string): ModelMenuItem[] | null | undefined {
-  for (const item of menuList) {
-    if (item.key === key) {
-      if (item.menuType === 'group') {
-        ElMessage.error('该菜单是 group 类型，无 sider 配置')
-        return null
-      }
+// function findCurrentMenu(menuList: ModelMenuItem[], key: string): ModelMenuItem[] | null | undefined {
+//   for (const item of menuList) {
+//     if (item.key === key) {
+//       if (item.menuType === 'group') {
+//         ElMessage.error('该菜单是 group 类型，无 sider 配置')
+//         return null
+//       }
 
-      if (item.moduleType !== 'sider') {
-        ElMessage.error('该菜单不是 sider 类型')
-        return null
-      }
+//       if (item.moduleType !== 'sider') {
+//         ElMessage.error('该菜单不是 sider 类型')
+//         return null
+//       }
 
-      const { siderConfig } = item
+//       const { siderConfig } = item
 
-      if (!siderConfig?.menu) {
-        ElMessage.error('缺少 sider 配置')
-        return null
-      }
+//       if (!siderConfig?.menu) {
+//         ElMessage.error('缺少 sider 配置')
+//         return null
+//       }
 
-      return siderConfig?.menu
-    }
+//       return siderConfig?.menu
+//     }
 
-    if (
-      item.menuType === 'module'
-      && item.moduleType === 'sider'
-      && item.siderConfig?.menu
-    ) {
-      const result = findCurrentMenu(item.siderConfig?.menu, key)
-      if (result) {
-        return result
-      }
-    }
-  }
+//     if (
+//       item.menuType === 'module'
+//       && item.moduleType === 'sider'
+//       && item.siderConfig?.menu
+//     ) {
+//       const result = findCurrentMenu(item.siderConfig?.menu, key)
+//       if (result) {
+//         return result
+//       }
+//     }
+//   }
 
-  return null
-}
+//   return null
+// }
 
 onBeforeMount(() => {
   const key = route.query.key as string | undefined
@@ -70,7 +70,7 @@ watch(() => menuStore.menuList, (menus) => {
     return
   }
 
-  const menuArray = findCurrentMenu(menus, key)
+  const menuArray = menuStore.findSiderMenuItems(key)
   if (!menuArray) {
     ElMessage.error(`未配置当前菜单的 sider 配置, key: ${key}`)
     return
@@ -79,9 +79,16 @@ watch(() => menuStore.menuList, (menus) => {
   menuList.value = menuArray
 }, { immediate: true })
 
-function onMenuSelect(key: string) {
+function onMenuSelect(siderKey: string) {
   const projKey = route.query.proj_key as string
-  router.replace(`/sider?proj_key=${projKey}&key=${key}`)
+  const key = route.query.key as string
+
+  //
+  const iframeItem = menuStore.findIframeMenuItem(siderKey)
+  if (iframeItem) {
+    router.push(`/sider/iframe?proj_key=${projKey}&key=${key}&sider_key=${siderKey}`)
+  }
+  router.replace(`/sider?proj_key=${projKey}&key=${key}&sider_key=${siderKey}`)
 }
 </script>
 

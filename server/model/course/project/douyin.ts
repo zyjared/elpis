@@ -18,7 +18,7 @@ const model: DashboardModel = {
             menuType: 'module',
             moduleType: 'custom',
             customConfig: {
-              path: '/taobao',
+              path: '/todo',
             },
           },
         ],

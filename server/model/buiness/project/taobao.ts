@@ -11,7 +11,7 @@ const model: DashboardModel = {
       menuType: 'module',
       moduleType: 'iframe',
       iframeConfig: {
-        path: 'https://zyjared.com',
+        path: 'https://baidu.com',
       },
     },
     {
@@ -25,19 +25,26 @@ const model: DashboardModel = {
             key: 'coupon',
             name: '优惠券',
             menuType: 'module',
-            moduleType: 'custom',
-            customConfig: {
-              path: '/taobao',
+            moduleType: 'iframe',
+            iframeConfig: {
+              path: 'https://bilibili.com',
             },
           },
           {
             key: 'limited',
             name: '限量购',
-            menuType: 'module',
-            moduleType: 'custom',
-            customConfig: {
-              path: '/taobao',
-            },
+            menuType: 'group',
+            subMenu: [
+              {
+                key: 'limited',
+                name: '限量购',
+                menuType: 'module',
+                moduleType: 'custom',
+                customConfig: {
+                  path: '/todo',
+                },
+              },
+            ],
           },
           {
             key: 'festival',
@@ -45,7 +52,7 @@ const model: DashboardModel = {
             menuType: 'module',
             moduleType: 'custom',
             customConfig: {
-              path: '/taobao',
+              path: '/todo',
             },
           },
         ],

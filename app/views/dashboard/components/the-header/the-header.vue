@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-import { computed, onBeforeMount, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useMenuStore } from '@/store/menu'
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useProjectStore } from '@/store/project'
 import HeaderContainer from '@/widgets/header-container/header-container.vue'
 

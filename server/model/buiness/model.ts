@@ -10,7 +10,7 @@ const model: DashboardModel = {
       menuType: 'module',
       moduleType: 'custom',
       customConfig: {
-        path: '/taobao',
+        path: '/todo',
       },
     },
     {
@@ -19,7 +19,7 @@ const model: DashboardModel = {
       menuType: 'module',
       moduleType: 'custom',
       customConfig: {
-        path: '/taobao',
+        path: '/todo',
       },
     },
     {
@@ -28,7 +28,7 @@ const model: DashboardModel = {
       menuType: 'module',
       moduleType: 'custom',
       customConfig: {
-        path: '/client',
+        path: '/todo',
       },
     },
   ],

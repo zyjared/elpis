@@ -22,7 +22,7 @@ const model: DashboardModel = {
             menuType: 'module',
             moduleType: 'custom',
             customConfig: {
-              path: '/pdd',
+              path: '/todo',
             },
           },
           {
@@ -54,7 +54,7 @@ const model: DashboardModel = {
           menuType: 'module',
           moduleType: 'custom',
           customConfig: {
-            path: '/pdd',
+            path: '/todo',
           },
         },
       ],

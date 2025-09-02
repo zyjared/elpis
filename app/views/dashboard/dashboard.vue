@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DtoModelItem, DtoProject, ModelMenuItem } from '~/types/model'
+import type { DtoProject, ModelMenuItem } from '~/types/model'
 import { ElMessage } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
-import { onBeforeMount, onMounted, ref, watch } from 'vue'
-import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useMenuStore } from '@/store/menu'
 import { useProjectStore } from '@/store/project'
 import { curl } from '~/shared/client/curl'

@@ -56,7 +56,10 @@ function handleUserCommand(command: string) {
 <style lang="scss" scoped>
 .header-container {
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -103,5 +106,10 @@ function handleUserCommand(command: string) {
 
 :deep(.el-tooltip__trigger) {
   outline: none;
+}
+
+.main {
+    flex: 1;
+    overflow: auto;
 }
 </style>
