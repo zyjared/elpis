@@ -1,0 +1,42 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./app/*"
+      ]
+    },
+    // 如果无法推断类型，回退到 any 后需要报错
+    // https://www.typescriptlang.org/tsconfig/#noImplicitAny
+    "noImplicitAny": true,
+    "outDir": "./dist/"
+    // "verbatimModuleSyntax": true
+  },
+  "include": [
+    "elpis-core/**/*.ts",
+    "elpis-core/**/*.d.ts",
+    "app/**/*.ts",
+    "app/**/*.d.ts",
+    "app/**/*.vue",
+    "server/**/*.ts",
+    "server/**/*.d.ts",
+    "types/**/*.ts",
+    "shared/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue/language-plugin-pug"
+    ]
+  }
+}

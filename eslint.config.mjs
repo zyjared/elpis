@@ -5,19 +5,19 @@ export default antfu({
   vue: true,
 
   ignores: [
-    'public/**',
-    'node_modules/**',
-    'dist/**',
-    'logs/**',
-    'runtime/**',
-    '**/static/**',
-    '**/asserts/**',
-    '**/*.d.ts',
-    '.gitignore',
-    'pnpm-lock.yaml',
-    'package-lock.json',
-    // FIXME: 需要支持
-    '**/*.pug',
+    '**/**',
+    // 'public/**',
+    // 'node_modules/**',
+    // 'dist/**',
+    // 'logs/**',
+    // 'runtime/**',
+    // '**/static/**',
+    // '**/asserts/**',
+    // '**/*.d.ts',
+    // '.gitignore',
+    // 'pnpm-lock.yaml',
+    // 'package-lock.json',
+    // '**/*.pug',
   ],
 }, {
   rules: {

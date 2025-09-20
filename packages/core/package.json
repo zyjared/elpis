@@ -1,0 +1,50 @@
+{
+  "name": "@elpis/core",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.13.1",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "elpis": "bin/elpis.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsx watch --max_old_space_size=4096 scripts/dev.ts",
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@koa/router": "catalog:",
+    "ajv": "catalog:",
+    "execa": "catalog:",
+    "fs-extra": "catalog:",
+    "koa": "catalog:",
+    "log4js": "catalog:",
+    "picocolors": "catalog:",
+    "ramda": "catalog:",
+    "tiny-glob": "catalog:",
+    "tsx": "catalog:"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "catalog:",
+    "@types/koa": "catalog:",
+    "@types/koa__router": "catalog:",
+    "@types/ramda": "catalog:",
+    "unbuild": "catalog:"
+  }
+}
