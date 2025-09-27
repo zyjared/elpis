@@ -1,5 +1,13 @@
-import { join, resolve } from 'node:path'
+// import type KoaRouter from '@koa/router'
+import path, { resolve } from 'node:path'
 import process from 'node:process'
+
+interface ServerOptions {
+  port?: number
+  host?: string
+  url?: string
+  dynamicPort?: boolean
+}
 
 export interface Options {
   /**
@@ -21,7 +29,7 @@ export interface Options {
    *
    * @default './app'
    */
-  appDir?: string
+  //   appDir?: string
 
   /**
    * 静态资源
@@ -30,25 +38,21 @@ export interface Options {
    */
   assetsDir?: string
 
-  server?: {
-    port?: number
-    host?: string
-    url?: string
-
-    /**
-     * 是否动态更换 port
-     *
-     * @default false
-     */
-    dynamicPort?: boolean
-  }
+  server?: ServerOptions
 
   debug?: boolean
+
 }
 
-export type ElpisOptions = Required<Options> & { server: Required<Options['server']> }
+export type ElpisOptions = Required<Options> & {
+  server: Required<ServerOptions>
+}
 
-export function mergeOptions(elpisOptions: ElpisOptions, options: Options) {
+function ensureIn(child: string, dir: string) {
+  return path.isAbsolute(child) ? child : path.join(dir, child)
+}
+
+export function mergeOptions(elpisOptions: ElpisOptions, options: Options): ElpisOptions {
   const final = {
     ...elpisOptions,
     ...options,
@@ -56,24 +60,25 @@ export function mergeOptions(elpisOptions: ElpisOptions, options: Options) {
       ...elpisOptions.server,
       ...options.server,
     },
+
   }
 
   const baseDir = resolve(final.baseDir)
-  const serverDir = resolve(baseDir, final.serverDir)
-  const appDir = resolve(baseDir, final.appDir)
-  const assetsDir = resolve(baseDir, final.assetsDir)
+  const serverDir = ensureIn(final.serverDir, baseDir)
+  //   const appDir = ensureIn(final.appDir, baseDir)
+  const assetsDir = final.assetsDir ? ensureIn(final.assetsDir, baseDir) : undefined
 
   return {
     ...final,
     baseDir,
     serverDir,
-    appDir,
+    // appDir,
     assetsDir,
     server: {
       ...final.server,
       url: `http://${final.server.host}:${final.server.port}`,
     },
-  }
+  } as ElpisOptions
 }
 
 export async function defineElpisOptions(

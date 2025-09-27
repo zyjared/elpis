@@ -1,8 +1,6 @@
+import type KoaRouter from '@koa/router'
 import type Application from 'koa'
-import type { Colors } from 'picocolors/types'
-
 import type { defineController } from './loader/controller'
-import type { defineMiddleware } from './loader/middlewares'
 import type { RouterSchema } from './loader/router-schema'
 import type { defineService } from './loader/service'
 import type { Logger } from './logger'
@@ -16,6 +14,7 @@ import { routerLoader } from './loader/router'
 import { routerSchemaLoader } from './loader/router-schema'
 import { serviceLoader } from './loader/service'
 import { createLogger } from './logger'
+import { useMiddlewares } from './middlewares'
 import { getRootOptions } from './options'
 import { mergeOptions } from './options/define'
 import { importModule } from './utils/imports'
@@ -45,10 +44,6 @@ interface Service {
   [key: string]: ReturnType<Parameters<typeof defineService>[0]> | Service
 }
 
-interface Config {
-  [key: string]: any
-}
-
 export interface ElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
 
   // 中间件
@@ -64,6 +59,8 @@ export interface ElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
   options: ElpisOptions
 
   logger: Logger
+
+  router: KoaRouter
 }
 
 export async function createApp(startOptions: Options = {}) {
@@ -108,6 +105,8 @@ export async function createApp(startOptions: Options = {}) {
   if (rootMiddleware) {
     rootMiddleware.default(app)
   }
+
+  useMiddlewares(app)
 
   // ------------------------------------------------------------
   // 加载路由

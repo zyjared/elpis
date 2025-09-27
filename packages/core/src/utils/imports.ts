@@ -25,6 +25,7 @@ export async function importModule(str: string, cwd: string) {
     return await import(file)
   }
   catch (error) {
+    console.error(error)
     return null
   }
 }

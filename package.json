@@ -15,13 +15,15 @@
     "commit": "git-cz",
     "tsx": "tsx",
     "preview": "python -m http.server -b 127.0.0.1 -d dist",
-    "dev": "set NODE_ENV=development && tsx watch --max_old_space_size=4096 scripts/dev.ts",
     "build": "tsx scripts/build.ts",
     "beta": "set NODE_ENV=beta && tsx watch index.ts",
     "prod": "set NODE_ENV=production && tsx index.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest --run",
     "catalog": "pnpx codemod pnpm/catalog"
+  },
+  "dependencies": {
+    "@elpis/core": "workspace:*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -30,6 +32,7 @@
     "commander": "catalog:",
     "commitizen": "catalog:",
     "cz-git": "catalog:",
+
     "eslint": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",

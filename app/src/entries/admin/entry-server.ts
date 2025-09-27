@@ -1,0 +1,15 @@
+import { renderToString } from 'vue/server-renderer'
+import { createApp } from '../../main'
+import { routes } from './router'
+
+export async function render(url: string, _manifest?: any) {
+  const { app } = await createApp({
+    routes,
+    url,
+  })
+
+  const ctx = {} as any
+  const html = await renderToString(app, ctx)
+
+  return { html }
+}

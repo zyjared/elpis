@@ -26,7 +26,7 @@ export async function getRootOptions() {
       : defineElpisOptions(module.default)
   }
   catch (error) {
-    console.warn(colors.yellow('elpis.config.ts'), '读取配置失败，使用默认配置')
+    console.warn(colors.yellow('elpis.config.ts'), '读取配置失败，使用默认配置', error)
     return defineElpisOptions({})
   }
 }

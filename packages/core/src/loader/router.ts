@@ -17,15 +17,19 @@ export async function routerLoader(app: ElpisApp) {
   const { serverDir } = app.options
   const logger = app.logger.child('loader:router')
 
+  const router = new KoaRouter()
+  app.router = router
+
   // router 路径
   const routerPath = resolve(serverDir, 'router')
 
   if (!fs.existsSync(routerPath)) {
+    app.use(router.routes())
+    app.use(router.allowedMethods())
     return
   }
 
   // 实例化 KoaRouter
-  const router = new KoaRouter()
 
   // 注册所有路由
   const ext = '{js,mjs,ts}'
@@ -79,15 +83,15 @@ export async function routerLoader(app: ElpisApp) {
   }
 
   // 路由兜底（健壮性）
-  router.get('(.*)', async (ctx, _next) => {
-    ctx.status = 404
-    ctx.body = {
-      error: 'Not Found',
-      message: 'The requested resource was not found',
-      path: ctx.path,
-      timestamp: new Date().toISOString(),
-    }
-  })
+  //   router.get('(.*)', async (ctx, _next) => {
+  //     ctx.status = 404
+  //     ctx.body = {
+  //       error: 'Not Found',
+  //       message: 'The requested resource was not found',
+  //       path: ctx.path,
+  //       timestamp: new Date().toISOString(),
+  //     }
+  //   })
 
   //  路由注册到 app 上
   app.use(router.routes())

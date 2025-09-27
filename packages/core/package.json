@@ -34,17 +34,19 @@
     "execa": "catalog:",
     "fs-extra": "catalog:",
     "koa": "catalog:",
+    "koa-static": "catalog:",
     "log4js": "catalog:",
     "picocolors": "catalog:",
     "ramda": "catalog:",
-    "tiny-glob": "catalog:",
-    "tsx": "catalog:"
+    "tiny-glob": "catalog:"
   },
   "devDependencies": {
     "@types/fs-extra": "catalog:",
     "@types/koa": "catalog:",
+    "@types/koa-static": "catalog:",
     "@types/koa__router": "catalog:",
     "@types/ramda": "catalog:",
+    "tsx": "catalog:",
     "unbuild": "catalog:"
   }
 }
