@@ -1,0 +1,26 @@
+{
+  "name": "@elpis/foundation",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "main": "./src/index.ts",
+  "files": [
+    "!**/*.test.ts",
+    "src/**/*.ts"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@elpis/core": "workspace:*",
+    "@elpis/shared": "workspace:*",
+    "axios": "catalog:",
+    "md5": "catalog:",
+    "pinia": "catalog:",
+    "vue": "catalog:"
+  }
+}

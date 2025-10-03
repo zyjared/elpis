@@ -1,0 +1,45 @@
+{
+  "name": "@elpis/ssr",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ssr": "bin/ssr.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "prepack": "unbuild"
+  },
+  "dependencies": {
+    "@elpis/core": "workspace:*",
+    "@elpis/shared": "workspace:*",
+    "@types/fs-extra": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "commander": "catalog:",
+    "fs-extra": "catalog:",
+    "koa-connect": "catalog:",
+    "pinia": "catalog:",
+    "tiny-glob": "catalog:",
+    "vite": "catalog:",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "unbuild": "catalog:"
+  }
+}

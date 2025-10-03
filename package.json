@@ -2,28 +2,24 @@
   "name": "elpis",
   "type": "module",
   "version": "1.0.0",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.17.1",
   "description": "",
   "author": "",
   "license": "ISC",
   "keywords": [],
-  "main": "index.js",
   "scripts": {
     "prepare": "simple-git-hooks",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "commit": "git-cz",
     "tsx": "tsx",
-    "preview": "python -m http.server -b 127.0.0.1 -d dist",
-    "build": "tsx scripts/build.ts",
-    "beta": "set NODE_ENV=beta && tsx watch index.ts",
-    "prod": "set NODE_ENV=production && tsx index.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest --run",
     "catalog": "pnpx codemod pnpm/catalog"
   },
   "dependencies": {
-    "@elpis/core": "workspace:*"
+    "@elpis/core": "workspace:*",
+    "@elpis/ssr": "workspace:*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -32,7 +28,6 @@
     "commander": "catalog:",
     "commitizen": "catalog:",
     "cz-git": "catalog:",
-
     "eslint": "catalog:",
     "lint-staged": "catalog:",
     "simple-git-hooks": "catalog:",

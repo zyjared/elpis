@@ -5,7 +5,7 @@ import '@/style.css'
 <template>
   <h1>
     Projects
-    <a href="/admin">
+    <a href="/view/admin">
       Admin
     </a>
   </h1>

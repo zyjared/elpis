@@ -4,28 +4,38 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsx server.ts",
-    "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --outDir dist/server --ssr src/entry-server.ts "
+    "typecheck": "tsc --noEmit",
+    "dev": "ssr"
   },
   "dependencies": {
     "@elpis/core": "workspace:*",
+    "@elpis/ssr": "workspace:*",
+    "@koa/bodyparser": "catalog:",
+    "@koa/cors": "catalog:",
+    "ajv": "catalog:",
+    "element-plus": "catalog:",
     "fs-extra": "catalog:",
-    "koa-connect": "^2.1.0",
+    "koa-connect": "catalog:",
+    "koa-logger": "catalog:",
+    "koa-static": "catalog:",
+    "log4js": "catalog:",
+    "md5": "catalog:",
     "pinia": "catalog:",
+    "superagent": "catalog:",
+    "unocss": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
   "devDependencies": {
     "@types/fs-extra": "catalog:",
-    "@types/node": "^24.5.2",
+    "@types/node": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/tsconfig": "catalog:",
+    "tiny-glob": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "unocss": "^66.5.2",
+    "unocss": "catalog:",
     "vite": "catalog:",
     "vue-tsc": "catalog:"
   }
