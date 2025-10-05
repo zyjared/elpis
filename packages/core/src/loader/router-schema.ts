@@ -6,7 +6,7 @@ import fs from 'fs-extra'
 import glob from 'tiny-glob'
 
 export type JSONSchema = Omit<SomeJSONSchema, 'required'> & Partial<Pick<SomeJSONSchema, 'required'>>
-export type RequestSchema = Partial<Record<'query' | 'body' | 'params' | 'header', JSONSchema>>
+export type RequestSchema = Partial<Record<'query' | 'body' | 'params' | 'headers', JSONSchema>>
 export type MethodSchema = Partial<Record<'get' | 'post' | 'put' | 'delete' | 'patch', RequestSchema>>
 export type RouterSchema = Record<string, MethodSchema>
 

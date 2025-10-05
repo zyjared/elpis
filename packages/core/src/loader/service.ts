@@ -3,16 +3,12 @@ import { resolve, sep } from 'node:path'
 import fs from 'fs-extra'
 import glob from 'tiny-glob'
 
-type Awaitable<T> = Promise<T> | T
-
-export function defineService(service: (app: ElpisApp) => Awaitable<InstanceType<any>>) {
-  return service
-}
-
 /**
  * service loader
  *
  * 加载所有 service，可通过 'app.service.${目录}.${文件}' 获取
+ *
+ * 默认导出一个类，该类会自动注入 app 实例
  *
  * @example
  * ```txt
@@ -103,17 +99,15 @@ export async function serviceLoader(app: ElpisApp) {
       const k = names[i]
 
       if (i === names.length - 1) {
-        // 这要求 service 是默认导出函数，且返回一个类
-        if (module.default && typeof module.default === 'function') {
-          const _class = await module.default(app)
-          tempService[k] = new _class()
+        // 这要求 service 是默认导出类
+        if (module.default) {
+          const _class = await module.default
+          // 实例化时，传递 app 实例
+          tempService[k] = new _class(app)
           logger.debug(`${file} 加载成功`)
         }
-        else if (module.default) {
-          logger.error(`${file} 必须默认导出函数，且返回一个类`)
-        }
         else {
-          logger.error(`${file} 必须使用默认导出`)
+          logger.error(`${file} 必须使用默认导出类`)
         }
         break
       }

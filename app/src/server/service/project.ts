@@ -1,4 +1,8 @@
-import { defineService } from '@elpis/core'
+import type { ElpisApp } from '@elpis/core'
+import BaseService from './base'
 
-export default defineService(() => {
-})
+export default class ProjectService extends BaseService {
+  constructor(app: ElpisApp) {
+    super(app)
+  }
+}

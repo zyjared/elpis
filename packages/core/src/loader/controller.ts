@@ -3,10 +3,6 @@ import { resolve, sep } from 'node:path'
 import fs from 'fs-extra'
 import glob from 'tiny-glob'
 
-export function defineController(controller: (app: ElpisApp) => InstanceType<any>) {
-  return controller
-}
-
 /**
  * controller loader
  *
@@ -101,17 +97,15 @@ export async function controllerLoader(app: ElpisApp) {
       const k = names[i]
 
       if (i === names.length - 1) {
-        // 这要求 controller 是默认导出函数，且返回一个类
-        if (module.default && typeof module.default === 'function') {
-          const _class = module.default(app)
-          tempController[k] = new _class()
+        // 这要求 controller 是默认导出类
+        if (module.default) {
+          const _class = module.default
+          tempController[k] = new _class(app)
+          // 实例化时，传递 app 实例
           logger.debug(`${file} 加载成功`)
         }
-        else if (module.default) {
-          logger.error(`${file} 必须默认导出函数，且返回一个类`)
-        }
         else {
-          logger.error(`${file} 必须使用默认导出`)
+          logger.error(`${file} 必须使用默认导出类`)
         }
         break
       }

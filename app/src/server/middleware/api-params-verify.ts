@@ -1,18 +1,23 @@
+import type { ElpisApp } from '@elpis/core'
 import type { ValidateFunction } from 'ajv'
-import { defineMiddleware } from '@elpis/core'
+import type Koa from 'koa'
 import Ajv from 'ajv'
 
 const ajv = new Ajv()
 
-export default defineMiddleware((app) => {
+export default function (app: ElpisApp): Koa.Middleware {
   // @see https://json-schema.org/understanding-json-schema/reference/schema#schema
   const $schema = 'https://json-schema.org/draft/2020-12/schema'
 
   return async (ctx, next) => {
     const { body, query, headers } = ctx.request
-    const { params, path, method } = ctx
+    const { params, path } = ctx
 
-    const schema = app.routerSchema[path]?.[method.toLowerCase()]
+    const method = ctx.method.toLowerCase() as 'get' | 'post' | 'put' | 'delete' | 'patch'
+
+    const schema = app.routerSchema[path]?.[method]
+
+    // 不需要校验
     if (!schema) {
       return await next()
     }
@@ -44,12 +49,13 @@ export default defineMiddleware((app) => {
         key: 'body',
         value: body,
       },
-    ]
+    ] as const
 
     for (const target of validationTargets) {
-      if (valid && target.value && schema[target.key]) {
-        schema[target.key].$schema = $schema
-        validate = ajv.compile(schema[target.key])
+      const key = target.key
+      if (valid && target.value && schema[key]) {
+        schema[key].$schema = $schema
+        validate = ajv.compile(schema[key])
         valid = validate(target.value)
       }
 
@@ -66,4 +72,4 @@ export default defineMiddleware((app) => {
 
     await next()
   }
-})
+}

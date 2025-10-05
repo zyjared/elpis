@@ -17,7 +17,7 @@ import '@/style.css'
   </div>
   <HelloWorld msg="Vite + Vue" />
 
-  <div class="b b-solid b-blue p-4 rounded flex gap-4">
+  <div class="p-4 rounded flex gap-4 justify-center">
     <RouterLink to="/">
       Home
     </RouterLink>

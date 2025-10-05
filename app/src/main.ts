@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import { createSSRApp, createApp as createVueApp } from 'vue'
 import { createMemoryHistory, createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
-// import 'virtual:uno.css'
+import 'virtual:uno.css'
 import '@/style.css'
 
 export async function createApp(options: {

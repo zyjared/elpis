@@ -1,8 +1,6 @@
 import type KoaRouter from '@koa/router'
 import type Application from 'koa'
-import type { defineController } from './loader/controller'
 import type { RouterSchema } from './loader/router-schema'
-import type { defineService } from './loader/service'
 import type { Logger } from './logger'
 import type { Options } from './options'
 import type { ElpisOptions } from './options/define'
@@ -33,15 +31,15 @@ export interface ElpisContext extends Application.Context {
 }
 
 interface Middlewares {
-  [key: string]: any
+  [key: string]: Koa.Middleware | Middlewares
 }
 
 interface Controller {
-  [key: string]: ReturnType<Parameters<typeof defineController>[0]> | Controller
+  [key: string]: any
 }
 
 interface Service {
-  [key: string]: ReturnType<Parameters<typeof defineService>[0]> | Service
+  [key: string]: any
 }
 
 export interface ElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {

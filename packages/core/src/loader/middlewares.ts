@@ -1,11 +1,15 @@
-import type { Context } from 'koa'
+import type Koa from 'koa'
+import type { Context, Next } from 'koa'
 import type { ElpisApp } from '../app'
 import { resolve, sep } from 'node:path'
 import fs from 'fs-extra'
+
 import glob from 'tiny-glob'
 
+type Awaitable<T> = Promise<T> | T
+
 export function defineMiddleware(
-  middleware: (app: ElpisApp) => (ctx: Context, next: () => Promise<void>) => Promise<void>,
+  middleware: (app: ElpisApp) => Awaitable<(ctx: Context, next: Next) => void>,
 ) {
   return middleware
 }
@@ -97,7 +101,7 @@ export async function middlewaresLoader(app: ElpisApp) {
 
     const { name, module, file } = result
 
-    let tempMiddlewares = middlewares
+    let tempMiddlewares: Record<string, any> = middlewares
     const names = name.split(sep)
 
     for (let i = 0; i < names.length; i++) {
@@ -105,12 +109,9 @@ export async function middlewaresLoader(app: ElpisApp) {
 
       if (i === names.length - 1) {
         // 这要求 middleware 是默认导出
-        if (module.default && typeof module.default === 'function') {
-          tempMiddlewares[k] = module.default(app)
+        if (module.default) {
+          tempMiddlewares[k] = module.default(app) as Koa.Middleware
           logger.debug(`${name} 加载成功`)
-        }
-        else if (module.default) {
-          logger.error(`Middleware ${file} 必须默认导出函数`)
         }
         else {
           logger.error(`Middleware ${file} 必须使用默认导出`)

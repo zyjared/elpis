@@ -6,6 +6,8 @@ interface BaseMenuItem {
   id: string
   /** 显示名称 */
   name: string
+  /** 子菜单 */
+  children?: MenuItem[]
 }
 
 /**
@@ -23,19 +25,14 @@ export interface IframeMenuItem extends BaseMenuItem {
 export interface RouteMenuItem extends BaseMenuItem {
   type: 'route'
   /** 路由路径 */
-  path: string
-  /** 路由元数据（可选） */
-  meta?: {
-    icon?: string
-    permissions?: string[]
-  }
+  path?: string
 }
 
 /**
  * 嵌套菜单项
  */
 export interface NestedMenuItem extends BaseMenuItem {
-  type: 'nested'
+  type: 'multi'
   /** 子菜单 */
   children: MenuItem[]
 }
@@ -45,7 +42,8 @@ export interface NestedMenuItem extends BaseMenuItem {
  */
 export interface SidebarMenuItem extends BaseMenuItem {
   type: 'sidebar'
-  children: MenuItem[]
+  path?: string
+  menu: MenuItem[]
 }
 
 export type MenuItem
@@ -76,6 +74,13 @@ export interface ProjectConfig {
  */
 export interface ProjectGroupConfig {
   id: string
+  title: string
+  description?: string
   /** 项目组包含的具体项目 */
-  projects: ProjectConfig[]
+  projects?: ProjectConfig[]
+
+  /**
+   * 前端不会得到
+   */
+  shared?: ProjectConfig
 }

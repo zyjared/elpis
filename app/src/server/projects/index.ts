@@ -55,6 +55,22 @@ export function defineGroup(group: ProjectGroupConfig) {
 
 const __dirname = path.resolve(fileURLToPath(import.meta.url), '..')
 
+function createGroup(groupId: string): Group {
+  return {
+    id: groupId,
+    title: '默认分类标题',
+    description: '默认分类描述',
+    projects: {},
+    shared: {
+      id: 'default',
+      groupId,
+      title: '默认标题',
+      description: '默认描述',
+      menu: [],
+    },
+  }
+}
+
 /**
  * 解析 model 配置，并返回组织且继承后的数据结构
  */
@@ -70,7 +86,7 @@ export async function loadProjects(app: ElpisApp) {
     if (file.includes('index.'))
       continue
 
-    const type = file.includes('project') ? 'project' : 'group'
+    const type = file.includes('project') ? 'project' : 'index'
 
     const url = new URL(`file://${path.resolve(groupPath, file)}`)
     const config = (await import(url.href))?.default
@@ -92,11 +108,7 @@ export async function loadProjects(app: ElpisApp) {
 
       let group = groups[groupId]
       if (!group) {
-        group = {
-          id: groupId,
-          projects: {},
-          shared: {},
-        }
+        group = createGroup(groupId)
       }
 
       const project: ProjectConfig = {
@@ -108,7 +120,7 @@ export async function loadProjects(app: ElpisApp) {
       group.projects[projectId] = project
     }
 
-    if (type === 'group') {
+    if (type === 'index') {
       const groupId = file.match(/[\\/]?(.*?)[\\/]model\.[jt]s/)?.[1]
       if (!groupId) {
         console.error(`[model] moduleKey 生成失败 ${file}`)
@@ -116,12 +128,7 @@ export async function loadProjects(app: ElpisApp) {
       }
       let group = groups[groupId]
       if (!group) {
-        group = {
-          id: groupId,
-          projects: {},
-          shared: {},
-          ...config,
-        } as Group
+        group = createGroup(groupId)
       }
       else {
         group.id = groupId
@@ -133,14 +140,16 @@ export async function loadProjects(app: ElpisApp) {
   }
 
   const result: ProjectGroupConfig[] = []
+
   Object.values(groups).forEach((group) => {
-    const projects = Object.values(group.projects).map((project) => {
+    const { shared, projects, ...rest } = group
+    const mergedProjects = Object.values(group.projects).map((project) => {
       return mergeProject(group.shared, project)
     }, []) as ProjectConfig[]
 
     result.push({
-      id: group.id,
-      projects,
+      ...rest,
+      projects: mergedProjects,
     })
   })
 }
