@@ -3,7 +3,9 @@ import { resolve, sep } from 'node:path'
 import fs from 'fs-extra'
 import glob from 'tiny-glob'
 
-export function defineService(service: (app: ElpisApp) => InstanceType<any>) {
+type Awaitable<T> = Promise<T> | T
+
+export function defineService(service: (app: ElpisApp) => Awaitable<InstanceType<any>>) {
   return service
 }
 
@@ -103,7 +105,7 @@ export async function serviceLoader(app: ElpisApp) {
       if (i === names.length - 1) {
         // 这要求 service 是默认导出函数，且返回一个类
         if (module.default && typeof module.default === 'function') {
-          const _class = module.default(app)
+          const _class = await module.default(app)
           tempService[k] = new _class()
           logger.debug(`${file} 加载成功`)
         }
@@ -120,7 +122,7 @@ export async function serviceLoader(app: ElpisApp) {
       if (!tempService[k]) {
         tempService[k] = {}
       }
-      tempService = tempService[k]
+      tempService = tempService[k] as ElpisApp['service']
     }
   }
 }

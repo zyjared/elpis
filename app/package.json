@@ -6,6 +6,7 @@
   "scripts": {
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "build": "vite build",
     "dev": "ssr"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "log4js": "catalog:",
     "md5": "catalog:",
     "pinia": "catalog:",
+    "ramda": "catalog:",
     "superagent": "catalog:",
     "unocss": "catalog:",
     "vue": "catalog:",
@@ -29,7 +31,15 @@
   },
   "devDependencies": {
     "@types/fs-extra": "catalog:",
+    "@types/koa": "catalog:",
+    "@types/koa-logger": "catalog:",
+    "@types/koa-static": "catalog:",
+    "@types/koa__cors": "catalog:",
+    "@types/koa__router": "catalog:",
+    "@types/md5": "catalog:",
     "@types/node": "catalog:",
+    "@types/ramda": "catalog:",
+    "@types/superagent": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/tsconfig": "catalog:",
     "tiny-glob": "catalog:",

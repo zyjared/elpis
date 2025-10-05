@@ -1,12 +1,13 @@
 import type { Logger } from 'log4js'
-import type { ElpisApp, ExtendModule } from '../../elpis-core/types'
 import path from 'node:path'
+import process from 'node:process'
+import { defineExtend } from '@elpis/core'
 import log4js from 'log4js'
 
-const logger: ExtendModule = (app: ElpisApp) => {
+export default defineExtend((app) => {
   const { baseDir } = app.options
   let logger: Logger | Console
-  if (app.env.dev) {
+  if (process.env.NODE_ENV === 'development') {
     logger = console
   }
   else {
@@ -31,6 +32,4 @@ const logger: ExtendModule = (app: ElpisApp) => {
   }
 
   return logger
-}
-
-export default logger
+})
