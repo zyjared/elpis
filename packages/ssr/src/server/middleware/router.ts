@@ -1,7 +1,22 @@
 import type { Router as ElpisRouter } from '@elpis/core'
 import type { ViteDevServer } from 'vite'
 import path from 'node:path'
+import process from 'node:process'
 import fs from 'fs-extra'
+
+function replaceTemplateVar(template: string, name: string, value?: string) {
+  return value !== undefined
+    ? template.replace(new RegExp(`<!--\s*${name}\s*-->`, 'g'), value)
+    : template
+}
+
+function replaceTemplateVars(template: string, vars: Record<string, string | undefined>) {
+  return Object.entries(vars)
+    .reduce(
+      (acc, [name, value]) => replaceTemplateVar(acc, name, value),
+      template,
+    )
+}
 
 function getDefaultTemplate(opts: {
   title?: string
@@ -9,46 +24,53 @@ function getDefaultTemplate(opts: {
   outlet?: string
   links?: string[] | string
 } = {}) {
-  const {
-    title = 'Elpis',
-    client,
-    outlet,
-    links,
-  } = opts
-  return `
-<!doctype html>
+  const template = `<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${title || 'Elpis'}</title>
-    ${
-      links
-        ? typeof links === 'string'
-          ? links
-          : links.join('')
-        : '<!--ssr-links-->'
-    }
+    <title><!--ssr-title--></title>
+    <!--ssr-links-->
   </head>
   <body>
-    <div id="app">${outlet || '<!--ssr-outlet-->'}</div>
-    ${client ? `<script type="module" src="${client}"></script>` : ''}
+    <div id="app"><!--ssr-outlet--></div>
+    <!--ssr-client-->
   </body>
-</html>
-`
+</html>`
+
+  return replaceTemplateVars(template, {
+    'ssr-title': opts.title || 'Elpis',
+    'ssr-outlet': opts.outlet,
+    'ssr-links': opts.links && (typeof opts.links === 'string' ? opts.links : opts.links.join('')),
+    'ssr-client': opts.client && `<script type="module" src="${opts.client}"></script>`,
+  })
 }
 
-function getEntryFiles(app: string, root: string) {
-  const index = path.join(root, 'index.html')
-  const client = path.join(root, 'main.ts')
-  const server = path.join(root, 'server.ts')
+function toPath(str: string) {
+  return str.replace(/[\\/]+/g, '/')
+}
 
-  return {
+function ensureStartWith(str: string, prefix: string) {
+  return str.startsWith(prefix) ? str : `${prefix}${str}`
+}
+
+function getEntryFiles(app: string, entryDir: string, cwd: string = process.cwd()) {
+  const index = path.join(entryDir, app, 'index.html')
+  const client = path.join(entryDir, app, 'main.ts')
+  const server = path.join(entryDir, app, 'server.ts')
+
+  const files = {
     index: fs.existsSync(index) ? index : undefined,
-    client: fs.existsSync(client) ? client : undefined,
-    server: fs.existsSync(server) ? server : undefined,
+    client: fs.existsSync(client)
+      ? ensureStartWith(toPath(path.relative(cwd, client)), '/')
+      : undefined,
+    server: fs.existsSync(server)
+      ? ensureStartWith(toPath(path.relative(cwd, server)), '/')
+      : undefined,
   }
+
+  return files
 }
 
 interface ViteRouterMiddlewareOptions {
@@ -110,7 +132,7 @@ export function createViteRouterMiddleware(vite: ViteDevServer, opts: ViteRouter
       if (entry.server) {
         const server = await vite.ssrLoadModule(entry.server)
         const { html } = await server.render(url)
-        template = template.replace(`<!--ssr-outlet-->`, html)
+        template = replaceTemplateVar(template, 'ssr-outlet', html)
       }
 
       ctx.status = 200

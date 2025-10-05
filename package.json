@@ -15,7 +15,8 @@
     "tsx": "tsx",
     "typecheck": "tsc --noEmit",
     "test": "vitest --run",
-    "catalog": "pnpx codemod pnpm/catalog"
+    "catalog": "pnpx codemod pnpm/catalog",
+    "dev": "pnpm --filter @elpis/app run dev"
   },
   "dependencies": {
     "@elpis/core": "workspace:*",
