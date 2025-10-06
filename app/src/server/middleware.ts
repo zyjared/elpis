@@ -1,3 +1,4 @@
+/* eslint-disable ts/ban-ts-comment */
 import type { ElpisApp } from '@elpis/core'
 import path from 'node:path'
 import { bodyParser } from '@koa/bodyparser'
@@ -44,11 +45,14 @@ export default async function (app: ElpisApp) {
   app.use(logger())
 
   // 错误处理
+  // @ts-expect-error
   app.use(app.middlewares.errorHandler)
 
   //  签名合法性校验
+  // @ts-expect-error
   app.use(app.middlewares.apiSignVerify)
 
   //  API 参数校验
+  // @ts-expect-error
   app.use(app.middlewares.apiParamsVerify)
 }

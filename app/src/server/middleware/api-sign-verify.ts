@@ -22,7 +22,7 @@ export default defineMiddleware((app) => {
       !sSign
       || !st
       || signature !== (sSign as string).toLowerCase()
-      || (Date.now() - Number(st)) < 600 * 1000 // 10 minutes
+      || Date.now() - Number(st) > 600 * 1000
     ) {
       ctx.status = 200
       ctx.body = {

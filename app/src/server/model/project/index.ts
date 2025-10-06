@@ -79,7 +79,8 @@ export async function loadProjects(app: ElpisApp) {
 
   const groups: Data<Group> = {}
 
-  const groupPath = path.resolve(serverDir, path.basename(__dirname))
+  const groupPath = path.resolve(serverDir, 'model', path.basename(__dirname))
+
   const files = await glob('**/*.{ts,js}', { cwd: groupPath })
 
   for (const file of files) {

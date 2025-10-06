@@ -25,7 +25,7 @@ export default defineMiddleware((app) => {
       const resBody = {
         success: false,
         code: 50000,
-        message: '网络异常 请稍后重试',
+        message: `网络异常 请稍后重试`,
       }
 
       ctx.status = 200

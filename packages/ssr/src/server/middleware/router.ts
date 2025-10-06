@@ -103,14 +103,6 @@ export function createViteRouterMiddleware(vite: ViteDevServer, opts: ViteRouter
 
       // view 不存在
       if (!apps.includes(view)) {
-        ctx.status = 200
-        ctx.set({ 'Content-Type': 'text/html' })
-        ctx.body = getDefaultTemplate({
-          title: 'Elpis',
-          client: '',
-          outlet: `入口: ${view} 不存在`,
-          links: [],
-        })
         return
       }
 

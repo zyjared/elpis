@@ -20,6 +20,7 @@ export async function createApp(options: {
     : '#app'
 
   const isSSR = import.meta.env.SSR
+
   const app = isSSR
     ? createSSRApp(appComponent)
     : createVueApp(appComponent)

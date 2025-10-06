@@ -10,6 +10,9 @@ export default class ProjectService extends BaseService {
     super(app)
   }
 
+  /**
+   * 获得项目分组列表
+   */
   async getGroups() {
     if (!this._groups) {
       this._groups = await loadProjects(this.app)
@@ -18,6 +21,9 @@ export default class ProjectService extends BaseService {
     return this._groups
   }
 
+  /**
+   * 获得项目列表
+   */
   async getProjects(groupId?: string) {
     const groups = await this.getGroups()
     return (
@@ -27,14 +33,13 @@ export default class ProjectService extends BaseService {
     ) || []
   }
 
+  /**
+   * 获得项目
+   */
   async getProject(groupId: string, projectId?: string) {
     const projects = await this.getProjects(groupId)
     return projectId
       ? projects?.find(project => project.id === projectId)
       : projects[0]
-  }
-
-  test() {
-    return 'test'
   }
 }
