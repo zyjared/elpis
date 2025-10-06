@@ -152,4 +152,6 @@ export async function loadProjects(app: ElpisApp) {
       projects: mergedProjects,
     })
   })
+
+  return result
 }

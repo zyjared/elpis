@@ -15,6 +15,7 @@ import { createLogger } from './logger'
 import { useMiddlewares } from './middlewares'
 import { getRootOptions } from './options'
 import { mergeOptions } from './options/define'
+import { TypeGenerator } from './types'
 import { importModule } from './utils/imports'
 import { findAvailablePort } from './utils/port'
 
@@ -34,14 +35,6 @@ interface Middlewares {
   [key: string]: Koa.Middleware | Middlewares
 }
 
-interface Controller {
-  [key: string]: any
-}
-
-interface Service {
-  [key: string]: any
-}
-
 export interface ElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
 
   // 中间件
@@ -49,10 +42,6 @@ export interface ElpisApp extends Omit<Koa<ElpisState, ElpisContext>, 'env'> {
   middlewares: Middlewares
 
   routerSchema: RouterSchema
-
-  controller: Controller
-
-  service: Service
 
   options: ElpisOptions
 
@@ -110,6 +99,9 @@ export async function createApp(startOptions: Options = {}) {
   // 加载路由
   // ------------------------------------------------------------
   await routerLoader(app)
+
+  const types = new TypeGenerator(app)
+  await types.generate()
 
   return app
 }

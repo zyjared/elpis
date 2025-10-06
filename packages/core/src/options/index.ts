@@ -21,9 +21,10 @@ export async function getRootOptions() {
   try {
     const file = pathToFileURL(files[0]).href
     const module = await import(file)
-    return typeof module.default === 'function'
-      ? module.default()
-      : defineElpisOptions(module.default)
+    const defaultModule = await module.default
+    return typeof defaultModule === 'function'
+      ? defaultModule()
+      : defineElpisOptions(defaultModule)
   }
   catch (error) {
     console.warn(colors.yellow('elpis.config.ts'), '读取配置失败，使用默认配置', error)
