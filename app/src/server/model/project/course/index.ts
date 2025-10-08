@@ -20,7 +20,7 @@ const model: ProjectModelConfig = {
         id: 'user',
         title: '用户管理',
         type: 'iframe',
-        url: '/iframe/user',
+        url: 'https://bilibili.com',
       },
       {
         id: 'course',
@@ -31,7 +31,33 @@ const model: ProjectModelConfig = {
             id: 'course',
             title: '课程管理',
             type: 'route',
-            path: '/todo',
+            path: '/sidebar/todo',
+          },
+          {
+            id: 'course-material',
+            title: '课程资料',
+            type: 'route',
+            path: '/sidebar/todo',
+          },
+          {
+            id: 'course-material2',
+            title: '课程资料2',
+            type: 'route',
+            path: '/sidebar/todo',
+            children: [
+              {
+                id: 'course-material-1',
+                title: '课程资料',
+                type: 'route',
+                path: '/sidebar/todo',
+              },
+              {
+                id: 'course-material-2',
+                title: '课程资料2',
+                type: 'route',
+                path: '/sidebar/todo',
+              },
+            ],
           },
         ],
       },

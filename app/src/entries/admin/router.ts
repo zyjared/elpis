@@ -12,6 +12,12 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/sidebar',
     component: () => import('@/components/dashboard/layout/container/sidebar.vue'),
+    children: [
+      {
+        path: '/sidebar/todo',
+        component: () => import('@/components/dashboard/layout/container/todo.vue'),
+      },
+    ],
   },
   {
     path: '/schema',

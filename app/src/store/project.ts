@@ -53,7 +53,7 @@ export const useProjectStore = defineStore('project', () => {
     setCurrent(projectId)
   }
 
-  function findMenuItem(idPath: string[], onGet?: (item?: MenuItem) => void, items = menu.value): MenuItem | undefined {
+  function findMenuItem(idPath: string[], onGet?: null | ((item?: MenuItem) => void), items = menu.value): MenuItem | undefined {
     const [id, ...ids] = idPath
 
     const item = items?.find(menu => menu.id === id)
@@ -66,8 +66,8 @@ export const useProjectStore = defineStore('project', () => {
   }
 
   // 统一跳转
-  function resolveMenuItemPath(keyPath: string[], query?: Record<string, string>) {
-    const item = findMenuItem(keyPath)
+  function resolveMenuItemPath(keyPath: string[], query?: Record<string, string>, items = menu.value) {
+    const item = findMenuItem(keyPath, null, items)
 
     if (!item) {
       throw new Error('路径生成错误')
