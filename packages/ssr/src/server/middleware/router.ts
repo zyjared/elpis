@@ -123,8 +123,11 @@ export function createViteRouterMiddleware(vite: ViteDevServer, opts: ViteRouter
       // 不检查 server 文件
       if (entry.server) {
         const server = await vite.ssrLoadModule(entry.server)
-        const { html } = await server.render(url)
-        template = replaceTemplateVar(template, 'ssr-outlet', html)
+        const { html, preloadLinks } = await server.render(url)
+        template = replaceTemplateVars(template, {
+          'ssr-outlet': html,
+          'ssr-links': preloadLinks,
+        })
       }
 
       ctx.status = 200

@@ -1,6 +1,6 @@
-import type { ProjectGroupConfig } from '@/types'
+import type { ProjectModelConfig } from '@/types'
 
-const group: ProjectGroupConfig = {
+const model: ProjectModelConfig = {
   id: 'course',
   title: '课程系统',
   description: '课程系统',
@@ -19,8 +19,8 @@ const group: ProjectGroupConfig = {
       {
         id: 'user',
         title: '用户管理',
-        type: 'route',
-        path: '/todo',
+        type: 'iframe',
+        url: '/iframe/user',
       },
       {
         id: 'course',
@@ -73,4 +73,4 @@ const group: ProjectGroupConfig = {
 
 }
 
-export default group
+export default model

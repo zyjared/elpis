@@ -1,43 +1,43 @@
 import type { ElpisApp } from '@elpis/core'
-import type { ProjectGroupConfig } from '@/types'
+import type { ProjectModelConfig } from '@/types'
 import { loadProjects } from '../model/project/index'
 import BaseService from './base'
 
 export default class ProjectService extends BaseService {
-  private _groups: ProjectGroupConfig[] | null = null
+  private _models: ProjectModelConfig[] | null = null
 
   constructor(app: ElpisApp) {
     super(app)
   }
 
   /**
-   * 获得项目分组列表
+   * 获得项目模型列表
    */
-  async getGroups() {
-    if (!this._groups) {
-      this._groups = await loadProjects(this.app)
+  async getModels() {
+    if (!this._models) {
+      this._models = await loadProjects(this.app)
     }
 
-    return this._groups
+    return this._models
   }
 
   /**
-   * 获得项目列表
+   * 获得项目模型下的项目列表
    */
-  async getProjects(groupId?: string) {
-    const groups = await this.getGroups()
+  async getProjects(modelId?: string) {
+    const models = await this.getModels()
     return (
-      groupId
-        ? groups.find(group => group.id === groupId)?.projects
-        : groups[0]?.projects
+      modelId
+        ? models.find(model => model.id === modelId)?.projects
+        : models[0]?.projects
     ) || []
   }
 
   /**
-   * 获得项目
+   * 获得项目模型下的指定项目
    */
-  async getProject(groupId: string, projectId?: string) {
-    const projects = await this.getProjects(groupId)
+  async getProject(modelId: string, projectId?: string) {
+    const projects = await this.getProjects(modelId)
     return projectId
       ? projects?.find(project => project.id === projectId)
       : projects[0]

@@ -22,10 +22,10 @@ export default function (app: ElpisApp): Koa.Middleware {
       return await next()
     }
 
-    app.logger.info(`[${method} ${path}] body: ${JSON.stringify(body)}`)
-    app.logger.info(`[${method} ${path}] params: ${JSON.stringify(params)}`)
-    app.logger.info(`[${method} ${path}] query: ${JSON.stringify(query)}`)
-    app.logger.info(`[${method} ${path}] headers: ${JSON.stringify(headers)}`)
+    // app.logger.info(`[${method} ${path}] body: ${JSON.stringify(body)}`)
+    // app.logger.info(`[${method} ${path}] params: ${JSON.stringify(params)}`)
+    // app.logger.info(`[${method} ${path}] query: ${JSON.stringify(query)}`)
+    // app.logger.info(`[${method} ${path}] headers: ${JSON.stringify(headers)}`)
 
     let valid = true
 

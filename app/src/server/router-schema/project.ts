@@ -10,9 +10,9 @@ export default defineRouterSchema(
         query: {
           type: 'object',
           properties: {
-            group_id: {
+            model_id: {
               type: 'string',
-              description: '分组 id',
+              description: '模型 id',
             },
           },
         },

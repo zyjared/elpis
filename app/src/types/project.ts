@@ -70,13 +70,13 @@ export interface ProjectConfig {
 }
 
 /**
- * 项目组配置
+ * 项目模型配置
  */
-export interface ProjectGroupConfig {
+export interface ProjectModelConfig {
   id: string
   title: string
   description?: string
-  /** 项目组包含的具体项目 */
+  /** 项目模型包含的具体项目 */
   projects?: ProjectConfig[]
 
   /**

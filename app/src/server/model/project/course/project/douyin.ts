@@ -8,7 +8,7 @@ const project: ProjectConfig = {
   menu: [
     {
       id: 'video',
-      title: '视频管理',
+      title: '抖音视频管理',
       type: 'route',
       path: '/todo',
     },
