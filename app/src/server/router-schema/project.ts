@@ -2,17 +2,17 @@ import { defineRouterSchema } from '@elpis/core'
 
 export default defineRouterSchema(
   {
-    '/api/project/model_list': {
+    '/api/project/groups': {
       get: {},
     },
-    '/api/project/project_list': {
+    '/api/project/list': {
       get: {
         query: {
           type: 'object',
           properties: {
-            model_key: {
+            group_id: {
               type: 'string',
-              description: '模型 key',
+              description: '分组 id',
             },
           },
         },
@@ -20,17 +20,17 @@ export default defineRouterSchema(
         params: {},
       },
     },
-    '/api/project': {
+    '/api/project/detail': {
       get: {
         query: {
           type: 'object',
           properties: {
-            proj_key: {
+            project_id: {
               type: 'string',
-              description: '项目 key',
+              description: '项目 id',
             },
           },
-          required: ['proj_key'],
+          required: ['project_id'],
         },
       },
     },

@@ -1,11 +1,15 @@
 import type { Component } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
+import ElementPlus from 'element-plus'
 import { createPinia } from 'pinia'
 import { createSSRApp, createApp as createVueApp } from 'vue'
 import { createMemoryHistory, createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 import 'virtual:uno.css'
+
 import '@/style.css'
+import 'element-plus/dist/index.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 export async function createApp(options: {
   routes?: RouteRecordRaw[]
@@ -27,6 +31,7 @@ export async function createApp(options: {
 
   const pinia = createPinia()
   app.use(pinia)
+  app.use(ElementPlus)
 
   let router = null
 

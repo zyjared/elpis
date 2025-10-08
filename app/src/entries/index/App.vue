@@ -1,5 +1,18 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+
+import { curl } from '../../utils/curl'
 import '@/style.css'
+
+onMounted(() => {
+  curl({
+    url: '/api/project/groups',
+    method: 'GET',
+  }).then((res) => {
+    // eslint-disable-next-line no-console
+    console.log(res)
+  })
+})
 </script>
 
 <template>

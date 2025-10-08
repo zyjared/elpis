@@ -15,7 +15,7 @@ function mergeProject<T = any>(origin: T, project: T): T {
         const result: T[] = []
         // 覆盖与继承
         l.forEach((lItem) => {
-          const rItem = r.find(rItem => rItem.key === lItem.key)
+          const rItem = r.find(rItem => rItem.id === lItem.id)
           result.push(
             rItem
               ? mergeProject(lItem, rItem)
@@ -24,7 +24,7 @@ function mergeProject<T = any>(origin: T, project: T): T {
         })
         // 新增
         r.forEach((rItem) => {
-          if (!l.find(lItem => lItem.key === rItem.key)) {
+          if (!l.find(lItem => lItem.id === rItem.id)) {
             result.push(rItem)
           }
         })
@@ -84,13 +84,13 @@ export async function loadProjects(app: ElpisApp) {
   const files = await glob('**/*.{ts,js}', { cwd: groupPath })
 
   for (const file of files) {
-    if (file.includes('index.'))
+    if (/^index\.m?[tj]s/.test(file))
       continue
 
     const type = file.includes('project') ? 'project' : 'index'
 
     const url = new URL(`file://${path.resolve(groupPath, file)}`)
-    const config = (await import(url.href))?.default
+    const config = (await import(url.href))?.default as ProjectGroupConfig | Group
 
     if (!config) {
       console.error(`[model] 配置文件 ${file} 导入失败`)
@@ -113,7 +113,6 @@ export async function loadProjects(app: ElpisApp) {
       }
 
       const project: ProjectConfig = {
-        id: projectId,
         groupId,
         ...config,
       } as ProjectConfig
@@ -122,19 +121,19 @@ export async function loadProjects(app: ElpisApp) {
     }
 
     if (type === 'index') {
-      const groupId = file.match(/[\\/]?(.*?)[\\/]model\.[jt]s/)?.[1]
+      const groupId = file.match(/[\\/]?(.*?)[\\/]index\.[jt]s/)?.[1]
       if (!groupId) {
-        console.error(`[model] moduleKey 生成失败 ${file}`)
+        console.error(`[project] groupId 生成失败 ${file}`)
         continue
       }
       let group = groups[groupId]
       if (!group) {
         group = createGroup(groupId)
       }
-      else {
-        group.id = groupId
-        group.shared = config?.shared
-      }
+      group = {
+        ...group,
+        ...config,
+      } as Group
 
       groups[groupId] = group
     }
@@ -145,7 +144,7 @@ export async function loadProjects(app: ElpisApp) {
   Object.values(groups).forEach((group) => {
     const { shared, projects, ...rest } = group
     const mergedProjects = Object.values(group.projects).map((project) => {
-      return mergeProject(group.shared, project)
+      return mergeProject(shared, project)
     }, []) as ProjectConfig[]
 
     result.push({

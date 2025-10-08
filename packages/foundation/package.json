@@ -17,7 +17,6 @@
   "scripts": {},
   "dependencies": {
     "@elpis/core": "workspace:*",
-    "@elpis/shared": "workspace:*",
     "axios": "catalog:",
     "md5": "catalog:",
     "pinia": "catalog:",

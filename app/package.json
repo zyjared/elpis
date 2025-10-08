@@ -10,11 +10,14 @@
     "dev": "tsx watch node_modules/@elpis/ssr/bin/ssr.mjs"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "catalog:",
     "@elpis/core": "workspace:*",
     "@elpis/ssr": "workspace:*",
     "@koa/bodyparser": "catalog:",
     "@koa/cors": "catalog:",
+    "@vueuse/core": "catalog:",
     "ajv": "catalog:",
+    "axios": "catalog:",
     "element-plus": "catalog:",
     "fs-extra": "catalog:",
     "koa-connect": "catalog:",
@@ -46,6 +49,8 @@
     "tsx": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
     "vite": "catalog:",
     "vue-tsc": "catalog:"
   }

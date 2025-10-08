@@ -12,24 +12,24 @@ const group: ProjectGroupConfig = {
     menu: [
       {
         id: 'video',
-        name: '视频管理',
+        title: '视频管理',
         type: 'route',
         path: '/todo',
       },
       {
         id: 'user',
-        name: '用户管理',
+        title: '用户管理',
         type: 'route',
         path: '/todo',
       },
       {
         id: 'course',
-        name: '课程管理',
+        title: '课程管理',
         type: 'sidebar',
         menu: [
           {
             id: 'course',
-            name: '课程管理',
+            title: '课程管理',
             type: 'route',
             path: '/todo',
           },
@@ -37,14 +37,34 @@ const group: ProjectGroupConfig = {
       },
       {
         id: 'course-material',
-        name: '课程资料',
+        title: '课程资料',
         type: 'multi',
         children: [
           {
             id: 'course-material',
-            name: '课程资料',
+            title: '课程资料',
             type: 'route',
             path: '/todo',
+          },
+          {
+            id: 'pdf',
+            title: 'PDF',
+            type: 'route',
+            path: '/todo',
+            children: [
+              {
+                id: 'pdf',
+                title: 'PDF',
+                type: 'route',
+                path: '/todo',
+              },
+              {
+                id: 'excel',
+                title: 'Excel',
+                type: 'route',
+                path: '/todo',
+              },
+            ],
           },
         ],
       },

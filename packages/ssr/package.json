@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@elpis/core": "workspace:*",
-    "@elpis/shared": "workspace:*",
     "@types/fs-extra": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "commander": "catalog:",

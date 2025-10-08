@@ -1,47 +1,76 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import vueLogo from '@/assets/vue.svg'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { storeToRefs } from 'pinia'
+import { computed, onMounted } from 'vue'
+import { RouterView } from 'vue-router'
+import Avatar from '@/assets/avatar.jpg?url'
+import { Layout, MenuItem } from '@/components/dashboard'
 
+import { useProjectStore } from '@/store/project'
 import '@/style.css'
+
+const projectStore = useProjectStore()
+const { menu, projects, project } = storeToRefs(projectStore)
+const { loadProjects, setCurrent } = projectStore
+
+// 相关的应用
+
+onMounted(async () => {
+  await loadProjects()
+  setCurrent(0)
+})
+
+const username = 'admin'
+const settings = computed(() => {
+  const showProjects = projects.value && projects.value.length
+  return [
+    showProjects && {
+      id: 'projects',
+      title: '项目',
+      children: projects.value,
+    },
+    {
+      id: 'logout',
+      title: '退出',
+    },
+  ]
+})
+
+function handleSelect(key: string, keyPath: string[]) {
+  // eslint-disable-next-line no-console
+  console.log('app menu', key, keyPath)
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo">
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img :src="vueLogo" class="logo vue" alt="Vue logo">
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <Layout :menu="menu" @select-menu="handleSelect">
+    <template #menu>
+      <el-sub-menu
+        v-if="project"
+        :index="project.id"
+        :item="project"
+      >
+        <template #title>
+          <span class="flex items-center">
+            <img :src="Avatar" alt="avatar" class="w-8 rounded-full mr-2">
+            <span class="">
+              {{ username }}
+            </span>
+          </span>
+        </template>
+        <MenuItem v-for="s in settings" :key="s.id" :item="s" />
+      </el-sub-menu>
+    </template>
 
-  <div class="p-4 rounded flex gap-4 justify-center">
-    <RouterLink to="/">
-      Home
-    </RouterLink>
-    <RouterLink to="/about">
-      About
-    </RouterLink>
-    <a href="/">
-      Index
-    </a>
-  </div>
-  <RouterView />
+    <RouterView />
+  </Layout>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* .el-icon--right {
+  transition: transform 0.3s ease-in-out;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+.el-dropdown span[aria-expanded='true'] .el-icon--right {
+  transform: rotate(180deg);
+} */
 </style>

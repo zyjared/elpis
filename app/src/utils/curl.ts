@@ -30,16 +30,23 @@ interface CurlRequestConfig<D = any> extends AxiosRequestConfig<D> {
 /**
  * 响应数据
  */
-interface CurlResponseData<T = any> {
-  success: boolean
-  data?: T
+type CurlResponseData<T = any> = {
+//   success: boolean
+//   data?: T
   metadata?: any
   message?: string
   code?: number
   /**
    * 是否签名
    */
-}
+} & (
+    {
+      success: true
+      data: T
+    } | {
+      success: false
+    }
+)
 
 /**
  * 响应数据纠正扩展后的 config 字段
@@ -129,10 +136,9 @@ instance.interceptors.response.use((res: CurlResponse) => {
   }
 
   // 显示错误消息
-  if (document) {
-    console.error(errorMessage)
+  if (!import.meta.env.SSR) {
+    console.error('Request Error:', errorMessage)
   }
-  console.error('Request Error:', error)
 
   return error
 })
@@ -143,5 +149,15 @@ export const request = instance
  * 获取数据，axios 响应是 response.data 部分
  */
 export async function curl<T = any, R = CurlResponseData<T>>(config: Partial<CurlRequestConfig>) {
+  if (
+    (!config.method || config.method === 'get')
+    && (config.url && config.data)
+  ) {
+    const search = new URLSearchParams()
+    Object.entries(config.data || {}).forEach(([key, value]) => {
+      search.append(key, value as string)
+    })
+    config.url = `${config.url}?${search.toString()}`
+  }
   return await instance.request<R>(config).then(res => res.data)
 }

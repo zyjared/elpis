@@ -5,7 +5,7 @@ interface BaseMenuItem {
   /** 唯一标识 */
   id: string
   /** 显示名称 */
-  name: string
+  title: string
   /** 子菜单 */
   children?: MenuItem[]
 }
