@@ -23,7 +23,7 @@ onBeforeMount(async () => {
 })
 
 function goProject(groupId: string, projectId: string) {
-  location.assign(`/view/admin#/?model_id=${groupId}&project_id=${projectId}`)
+  location.assign(`/view/admin#/?model=${groupId}&project=${projectId}`)
 }
 </script>
 

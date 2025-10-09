@@ -1,17 +1,19 @@
 <script lang="ts" setup>
-import type { ProjectConfig } from '@/types'
+import type { MenuItem } from '../menu/types'
 
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
+// import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
 import { useTemplateRef } from 'vue'
 import ThemeMode from '@/components/mode/index.vue'
+import { useProjectStore } from '@/store/project'
+
 import Menu from '../menu/index.vue'
 
 interface Props {
   title?: string
   userName?: string
   avatar?: string
-  menu?: ProjectConfig['menu']
+  menu?: MenuItem[]
   defaultMenuItem?: string
 }
 
@@ -25,7 +27,11 @@ const emit = defineEmits<{
   (e: 'selectMenu', key: string, keyPath: string[]): void
 }>()
 
+const projectStore = useProjectStore()
+const { setMenuIdPath } = projectStore
+
 function handleSelectMenu(key: string, keyPath: string[]) {
+  setMenuIdPath(keyPath)
   emit('selectMenu', key, keyPath)
 }
 
@@ -52,27 +58,27 @@ function goHome() {
 </script>
 
 <template>
-  <el-config-provider :locale="zhCn">
-    <el-container class="">
-      <el-header>
-        <Menu ref="menuRef" :menu="menu" :current="defaultMenuItem" @select="handleSelectMenu">
-          <template #before>
-            <el-row align="middle" class="cursor-pointer" @click="goHome">
-              <img src="/logo.png" alt="logo" class="w-8 mr-2 rounded-full">
-              <span>{{ title }}</span>
-            </el-row>
-          </template>
-          <template #after>
-            <slot name="menu" />
-            <ThemeMode />
-          </template>
-        </Menu>
-      </el-header>
-      <el-main>
-        <slot />
-      </el-main>
-    </el-container>
-  </el-config-provider>
+  <!-- <el-config-provider :locale="zhCn"> -->
+  <el-container class="">
+    <el-header>
+      <Menu ref="menuRef" :menu="menu" :current="defaultMenuItem" @select="handleSelectMenu">
+        <template #before>
+          <el-row align="middle" class="cursor-pointer" @click="goHome">
+            <img src="/logo.png" alt="logo" class="w-8 mr-2 rounded-full">
+            <span>{{ title }}</span>
+          </el-row>
+        </template>
+        <template #after>
+          <slot name="menu" />
+          <ThemeMode />
+        </template>
+      </Menu>
+    </el-header>
+    <el-main>
+      <slot />
+    </el-main>
+  </el-container>
+  <!-- </el-config-provider> -->
 </template>
 
 <style scoped>

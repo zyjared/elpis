@@ -7,7 +7,7 @@ export class TypeGenerator {
   app: ElpisApp
 
   cwd: string
-  filename = 'elpis-auto-types.d.ts'
+  filename = 'elpis-auto.d.ts'
   logger: ElpisApp['logger']
 
   constructor(app: ElpisApp) {

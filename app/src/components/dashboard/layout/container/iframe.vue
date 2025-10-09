@@ -1,14 +1,12 @@
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-
-const url = ref<string | undefined>()
 
 const route = useRoute()
 
-onMounted(() => {
-  const paramUrl = route.query.url as string
-  url.value = paramUrl || ''
+const url = computed(() => {
+  const p = route.query.url
+  return !p || Array.isArray(p) ? null : p
 })
 </script>
 

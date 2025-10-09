@@ -2,6 +2,7 @@
 import { ElMessage } from 'element-plus'
 import { computed } from 'vue'
 
+// import { RouterView } from 'vue-router'
 import Avatar from '@/assets/avatar.jpg?url'
 import { Layout, MenuItem } from '@/components/dashboard'
 import '@/style.css'

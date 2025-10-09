@@ -12,19 +12,28 @@ const model: ProjectModelConfig = {
     menu: [
       {
         id: 'video',
-        title: '视频管理',
+        title: '视频管理(route)',
         type: 'route',
         path: '/todo',
       },
       {
+        id: 'customer',
+        title: '客户管理(schema)',
+        type: 'schema',
+        schema: {
+          api: '/api/customer',
+          method: 'GET',
+        },
+      },
+      {
         id: 'user',
-        title: '用户管理',
+        title: '用户管理(iframe)',
         type: 'iframe',
         url: 'https://bilibili.com',
       },
       {
         id: 'course',
-        title: '课程管理',
+        title: '课程管理(sidebar)',
         type: 'sidebar',
         menu: [
           {
@@ -35,7 +44,7 @@ const model: ProjectModelConfig = {
           },
           {
             id: 'course-material',
-            title: '课程资料',
+            title: '课程资料 ',
             type: 'route',
             path: '/sidebar/todo',
           },
@@ -64,13 +73,13 @@ const model: ProjectModelConfig = {
       {
         id: 'course-material',
         title: '课程资料',
-        type: 'multi',
+        type: 'route',
         children: [
           {
             id: 'course-material',
-            title: '课程资料',
-            type: 'route',
-            path: '/todo',
+            title: '课程资料(iframe)',
+            type: 'iframe',
+            url: 'https://baidu.com',
           },
           {
             id: 'pdf',

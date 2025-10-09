@@ -10,7 +10,7 @@ export default defineRouterSchema(
         query: {
           type: 'object',
           properties: {
-            model_id: {
+            model: {
               type: 'string',
               description: '模型 id',
             },
@@ -25,12 +25,12 @@ export default defineRouterSchema(
         query: {
           type: 'object',
           properties: {
-            project_id: {
+            project: {
               type: 'string',
               description: '项目 id',
             },
           },
-          required: ['project_id'],
+          required: ['project'],
         },
       },
     },

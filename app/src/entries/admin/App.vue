@@ -14,19 +14,12 @@ const route = useRoute()
 
 const projectStore = useProjectStore()
 const { menu, projects } = storeToRefs(projectStore)
-const { loadProjects, loadMenu, setCurrent, resolveMenuItemPath } = projectStore
+const { loadProjects, loadMenu, resolveMenuPath } = projectStore
 
 const layoutRef = useTemplateRef<InstanceType<typeof Layout>>('layoutRef')
 
 onBeforeMount(async () => {
-  const query = route.query
-
-  const modelId = query.model_id as string
-  const projectId = query.project_id as string
-
-  await loadProjects(modelId)
-
-  setCurrent(projectId || 0)
+  await loadProjects()
 })
 
 const username = 'admin'
@@ -39,7 +32,7 @@ enum SETTINGS_ID {
 }
 const settings = computed(() => {
   const showProjects = projects.value && projects.value.length
-  const project_id = route.query.project_id
+  const project_id = route.query.project
   return [
     showProjects && {
       id: SETTINGS_ID.PROJECTS,
@@ -72,9 +65,9 @@ async function handleSelect(key: string, keyPath: string[]) {
   // 非设置菜单
   const query = route.query
   if (firstPath !== SETTINGS_ID.SELF) {
-    const url = resolveMenuItemPath(keyPath, {
-      project_id: query.project_id as string,
-      model_id: query.model_id as string,
+    const url = resolveMenuPath(keyPath, {
+      project: query.project as string,
+      model: query.model as string,
     })
     router.push(url)
     return
@@ -92,8 +85,9 @@ async function handleSelect(key: string, keyPath: string[]) {
   // 菜单操作
   await loadMenu(key)
   await router.push({
-    query: { ...query, project_id: key },
+    query: { ...query, project: key },
   })
+
   layoutRef.value?.updateActiveMenuIndex(menu.value[0]?.id)
 }
 </script>

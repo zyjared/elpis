@@ -21,7 +21,7 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: '/schema',
-    component: () => import('@/components/dashboard/layout/container/schema.vue'),
+    component: () => import('@/components/dashboard/layout/container/schema/index.vue'),
   },
   {
     path: '/iframe',

@@ -28,13 +28,14 @@ export interface RouteMenuItem extends BaseMenuItem {
   path?: string
 }
 
-/**
- * 嵌套菜单项
- */
-export interface NestedMenuItem extends BaseMenuItem {
-  type: 'multi'
-  /** 子菜单 */
-  children: MenuItem[]
+export interface SchemaConfig {
+  api: string
+  method?: string
+}
+
+export interface SchemaMenuItem extends BaseMenuItem {
+  type: 'schema'
+  schema: SchemaConfig
 }
 
 /**
@@ -49,8 +50,8 @@ export interface SidebarMenuItem extends BaseMenuItem {
 export type MenuItem
   = | IframeMenuItem
     | RouteMenuItem
-    | NestedMenuItem
     | SidebarMenuItem
+    | SchemaMenuItem
 
 export type Menu = MenuItem[]
 
