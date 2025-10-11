@@ -21,8 +21,50 @@ const model: ProjectModelConfig = {
         title: '客户管理(schema)',
         type: 'schema',
         schema: {
-          api: '/api/customer',
-          method: 'GET',
+          table: {
+            api: '/api/example/table',
+            method: 'GET',
+            columns: [
+              {
+                prop: 'id',
+                label: 'ID',
+              },
+              {
+                prop: 'name',
+                label: '姓名',
+              },
+              {
+                prop: 'address',
+                label: '地址',
+              },
+              {
+                prop: 'createdAt',
+                label: '创建时间',
+              },
+              {
+                prop: 'updatedAt',
+                label: '更新时间',
+              },
+            ],
+            options: {
+              border: true,
+              stripe: true,
+            },
+            buttons: {
+              add: {
+                api: '/api/example/add',
+                name: '示例',
+              },
+              delete: {
+                api: '/api/example/remove',
+                prop: 'id',
+                promptProp: 'name',
+              },
+            },
+          },
+          search: {
+            api: '/api/customer',
+          },
         },
       },
       {

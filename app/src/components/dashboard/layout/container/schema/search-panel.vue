@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <el-card>
     search-panel
-  </div>
+  </el-card>
 </template>

@@ -1,11 +1,11 @@
 /* eslint-disable ts/ban-ts-comment */
 import type { ElpisApp } from '@elpis/core'
 import path from 'node:path'
-import { bodyParser } from '@koa/bodyparser'
 import cors from '@koa/cors'
+import { koaBody } from 'koa-body'
+// import pug from 'pug'
 import logger from 'koa-logger'
 import koaStatic from 'koa-static'
-// import pug from 'pug'
 
 export default async function (app: ElpisApp) {
   // 允许跨域
@@ -35,11 +35,8 @@ export default async function (app: ElpisApp) {
   //     await next()
   //   })
 
-  //  解析 ctx.body
-  app.use(bodyParser({
-    jsonLimit: '10mb',
-    enableTypes: ['json', 'form', 'text'],
-  }))
+  // 解析 body
+  app.use(koaBody())
 
   // 日志
   app.use(logger())

@@ -10,7 +10,7 @@ export default function (app: ElpisApp): Koa.Middleware {
   const $schema = 'https://json-schema.org/draft/2020-12/schema'
 
   return async (ctx, next) => {
-    const { body, query, headers } = ctx.request
+    const { query, headers, body } = ctx.request as any
     const { params, path } = ctx
 
     const method = ctx.method.toLowerCase() as 'get' | 'post' | 'put' | 'delete' | 'patch'

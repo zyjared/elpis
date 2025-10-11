@@ -10,6 +10,7 @@ interface ElpisService {
 
 interface ElpisController {
   base: InstanceType<typeof import('./controller/base').default>
+  example: InstanceType<typeof import('./controller/example').default>
   project: InstanceType<typeof import('./controller/project').default>
 }
 

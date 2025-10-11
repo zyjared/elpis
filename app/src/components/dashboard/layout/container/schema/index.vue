@@ -14,7 +14,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <SearchPanel />
+    <SearchPanel class="mb-4" />
     <TablePanel />
   </div>
 </template>

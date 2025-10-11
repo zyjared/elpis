@@ -97,6 +97,10 @@ export function createViteRouterMiddleware(vite: ViteDevServer, opts: ViteRouter
       return
     }
 
+    if (url.startsWith('/api/')) {
+      return await next()
+    }
+
     try {
       // /view/web-admin --> web-admin
       const view = url.match(/^\/view\/(.*)$/)?.[1] ?? 'index'

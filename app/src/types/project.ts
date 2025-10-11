@@ -1,3 +1,5 @@
+import type { Schema as SchemaConfig } from './schema'
+
 /**
  * 菜单项基础类型
  */
@@ -26,11 +28,6 @@ export interface RouteMenuItem extends BaseMenuItem {
   type: 'route'
   /** 路由路径 */
   path?: string
-}
-
-export interface SchemaConfig {
-  api: string
-  method?: string
 }
 
 export interface SchemaMenuItem extends BaseMenuItem {

@@ -1,6 +1,6 @@
 export { createApp, start, startServer } from './app'
 
-export type { ElpisApp, ElpisContext } from './app'
+export type { ElpisApp, ElpisContext, ElpisQueryContext } from './app'
 
 export { defineExtend } from './loader/extend'
 export { defineMiddleware } from './loader/middlewares'

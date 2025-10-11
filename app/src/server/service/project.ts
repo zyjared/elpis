@@ -42,4 +42,12 @@ export default class ProjectService extends BaseService {
       ? projects?.find(project => project.id === projectId)
       : projects[0]
   }
+
+  /**
+   * 获得项目模型下的指定菜单
+   */
+  async getMenu(modelId: string, projectId: string) {
+    const project = await this.getProject(modelId, projectId)
+    return project?.menu
+  }
 }

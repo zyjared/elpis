@@ -15,7 +15,12 @@ export function useSchema() {
     return currentMenuItem.value.schema
   })
 
+  //   const table = computed(() => schema.value?.table)
+  //   const search = computed(() => schema.value?.search)
+
   return {
     schema,
+    // table,
+    // search,
   }
 }

@@ -1,5 +1,6 @@
 import type KoaRouter from '@koa/router'
 import type Application from 'koa'
+import type { ParsedUrlQuery } from 'node:querystring'
 import type { RouterSchema } from './loader/router-schema'
 import type { Logger } from './logger'
 import type { Options } from './options'
@@ -25,10 +26,15 @@ export interface ElpisState extends Application.DefaultState {
 
 interface ElpisRequest extends Application.Request {
   body: Record<string, unknown>
+
 }
 
 export interface ElpisContext extends Application.Context {
   request: ElpisRequest
+}
+
+export type ElpisQueryContext<T = ParsedUrlQuery> = ElpisContext & {
+  query: T
 }
 
 interface Middlewares {

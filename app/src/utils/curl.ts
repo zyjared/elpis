@@ -1,5 +1,6 @@
 import type { AxiosError, AxiosRequestConfig, AxiosRequestHeaders, AxiosResponse } from 'axios'
 import axios from 'axios'
+import { ElMessage } from 'element-plus'
 import md5 from 'md5'
 
 export function withBase(url: string, base: string = '/') {
@@ -85,7 +86,7 @@ instance.interceptors.response.use((res: CurlResponse) => {
   const { data: resData, config } = res
 
   const {
-    onError = console.error,
+    onError = import.meta.env.SSR ? () => {} : ElMessage,
     errorMessage,
   } = config
 
@@ -150,7 +151,7 @@ export const request = instance
  */
 export async function curl<T = any, R = CurlResponseData<T>>(config: Partial<CurlRequestConfig>) {
   if (
-    (!config.method || config.method === 'get')
+    (!config.method || config.method.toLowerCase() === 'get')
     && (config.url && config.data)
   ) {
     const search = new URLSearchParams()
