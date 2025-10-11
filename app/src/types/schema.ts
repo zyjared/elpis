@@ -73,14 +73,41 @@ interface SchemaTableButton {
 export interface SchemaTable {
   api: string
   method?: SchemaMethod
+  pageSize?: number
+  page?: number
   columns: SchemaTableColumn[]
   options: SchemaTableOptions
   buttons?: SchemaTableButton
 }
 
+interface SearchProp {
+  prop: string
+  label: string
+
+  required?: boolean
+  placeholder?: string
+  defaultValue?: any
+  disabled?: boolean
+  readonly?: boolean
+  width?: string
+}
+
+interface SearchPropInput extends SearchProp {
+  type: 'input'
+}
+
+interface SearchPropSelect extends SearchProp {
+  type: 'select'
+  options: {
+    label: string
+    value: number | string
+  }[]
+}
+
 export interface SchemaSearch {
   api: string
   method?: SchemaMethod
+  props?: Array<SearchPropInput | SearchPropSelect>
 }
 
 export interface Schema {

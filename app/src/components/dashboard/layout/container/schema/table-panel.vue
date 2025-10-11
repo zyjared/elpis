@@ -14,16 +14,38 @@ const buttons = computed(() => table.value?.buttons || {})
 
 const data = shallowRef<Data[]>([])
 
-const pagination = reactive({
-  page: 1,
+const DEFAULT_PAGE = {
   pageSize: 10,
+  page: 1,
+}
+
+const pagination = reactive({
   total: 0,
+  ...DEFAULT_PAGE,
 })
 
 function resetPagination() {
-  pagination.page = 1
-  pagination.pageSize = 10
+  const { pageSize, page } = {
+    ...DEFAULT_PAGE,
+    ...schema.value?.table,
+  }
+  pagination.page = page
+  pagination.pageSize = pageSize
   pagination.total = 0
+}
+
+function isInitPagination() {
+  const { pageSize, page } = {
+    ...DEFAULT_PAGE,
+    ...schema.value?.table,
+  }
+  return pagination.page === page && pagination.pageSize === pageSize
+}
+
+const filters = shallowRef<Record<string, any>>({})
+
+function setFilters(conditions: Record<string, any>) {
+  filters.value = conditions
 }
 
 async function fetchData() {
@@ -35,12 +57,14 @@ async function fetchData() {
     })
     return
   }
+
   const res = await curl({
     url: api,
     method: table.value.method || 'GET',
     data: {
       page: pagination.page,
       pageSize: pagination.pageSize,
+      ...filters.value,
     },
   })
 
@@ -52,7 +76,7 @@ async function fetchData() {
     return
   }
 
-  pagination.total = res.metadata.total
+  pagination.total = res.metadata?.total || 0
   data.value = res.data
 }
 
@@ -128,6 +152,27 @@ function handleAdd() {
     type: 'success',
   })
 }
+
+defineExpose({
+  fetchData: (filters: Record<string, any> = {}, reset?: boolean) => {
+    setFilters(filters)
+    if (reset && !isInitPagination()) {
+      // 自动触发请求
+      resetPagination()
+      return
+    }
+
+    fetchData()
+  },
+  reset: () => {
+    setFilters({})
+    if (!isInitPagination()) {
+      resetPagination()
+      return
+    }
+    fetchData()
+  },
+})
 </script>
 
 <template>

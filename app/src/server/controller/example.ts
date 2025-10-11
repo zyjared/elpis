@@ -9,6 +9,15 @@ interface ExampleRow {
   updatedAt: string
 }
 
+const ADDRESS = [
+  '北京',
+  '上海',
+  '广州',
+]
+
+const LAST_NAME = ['张', '王', '李', '赵', '孙', '周', '吴', '郑', '冯', '陈']
+const FIRST_NAME = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
+
 export default class ExampleController extends BaseController {
   data: ExampleRow[] = []
   lastId = 0
@@ -26,10 +35,11 @@ export default class ExampleController extends BaseController {
       .replace('T', ' ')
       .replace(/-/g, '/')
       .slice(0, 19)
+
     return {
       id: this.lastId,
-      name: name || `name ${this.lastId}`,
-      address: address || `address ${this.lastId}`,
+      name: name || `${LAST_NAME[this.lastId % LAST_NAME.length]}${FIRST_NAME[this.lastId % FIRST_NAME.length]} ${this.lastId}`,
+      address: address || ADDRESS[this.lastId % ADDRESS.length] || '',
       createdAt: now,
       updatedAt: now,
     }
@@ -55,12 +65,19 @@ export default class ExampleController extends BaseController {
     const page = query.page ? +query.page : 1
     const pageSize = query.pageSize ? +query.pageSize : 10
 
+    const { name = '', address = '' } = query as { name?: string, address?: string }
+
+    const data = !name && !address
+      ? this.data
+      : this.data.filter(item => item.name.includes(name) && item.address.includes(address))
+
     const offset = (page - 1) * pageSize
+
     return this.success(
       ctx,
-      this.data.slice(offset, offset + pageSize),
+      data.slice(offset, offset + pageSize),
       {
-        total: this.data.length,
+        total: data.length,
       },
     )
   }
@@ -77,8 +94,8 @@ export default class ExampleController extends BaseController {
   }
 
   searchTableRows(ctx: ElpisContext) {
-    const { name } = this.getQuery<{ name: string, address: string }>(ctx)
-    const data = this.data.filter(item => item.name.includes(name))
+    const { name = '', address = '' } = this.getQuery<{ name: string, address: string }>(ctx)
+    const data = this.data.filter(item => item.name.includes(name) && item.address.includes(address))
     return this.success(ctx, data)
   }
 }

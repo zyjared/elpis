@@ -60,10 +60,48 @@ const model: ProjectModelConfig = {
                 prop: 'id',
                 promptProp: 'name',
               },
+              edit: {
+                api: '/api/example/edit',
+                props: ['id', 'name', 'address'],
+              },
             },
           },
           search: {
-            api: '/api/customer',
+            api: '/api/example/table',
+            props: [
+              {
+                prop: 'name',
+                label: '姓名',
+                type: 'input',
+                defaultValue: '',
+                placeholder: '请输入姓名',
+              },
+              {
+                prop: 'address',
+                label: '地址',
+                type: 'select',
+                defaultValue: '',
+                placeholder: '请选择地址',
+                options: [
+                  {
+                    label: '全部',
+                    value: '',
+                  },
+                  {
+                    label: '北京',
+                    value: '北京',
+                  },
+                  {
+                    label: '上海',
+                    value: '上海',
+                  },
+                  {
+                    label: '广州',
+                    value: '广州',
+                  },
+                ],
+              },
+            ],
           },
         },
       },
