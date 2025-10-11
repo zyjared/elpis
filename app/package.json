@@ -17,6 +17,7 @@
     "@koa/multer": "catalog:",
     "@vueuse/core": "catalog:",
     "ajv": "catalog:",
+    "ajv-formats": "catalog:",
     "axios": "catalog:",
     "element-plus": "catalog:",
     "fs-extra": "catalog:",

@@ -13,8 +13,8 @@ export default defineMiddleware((app) => {
         detail: string
       }
       app.logger.info(JSON.stringify(error))
-      app.logger.error('[-- exception --]', error)
-      app.logger.error('[-- exception --]', status, message, detail)
+      app.logger.error('[-- exception --]\n', error)
+      app.logger.error('[-- exception --]\n', status, message, detail)
 
       // 这里处理模板不存在的情况
       if (message && (message as string).includes('template not found')) {
@@ -25,7 +25,7 @@ export default defineMiddleware((app) => {
       const resBody = {
         success: false,
         code: 50000,
-        message: `网络异常 请稍后重试`,
+        message: message || `网络异常 请稍后重试`,
       }
 
       ctx.status = 200

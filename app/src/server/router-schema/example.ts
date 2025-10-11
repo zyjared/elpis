@@ -40,12 +40,10 @@ export default defineRouterSchema(
             name: {
               type: 'string',
               description: '名称',
-              required: true,
             },
             address: {
               type: 'string',
               description: '地址',
-              required: true,
             },
           },
         },
@@ -59,7 +57,6 @@ export default defineRouterSchema(
             id: {
               type: 'string',
               description: 'ID',
-              required: true,
             },
             name: {
               type: 'string',

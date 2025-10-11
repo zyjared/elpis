@@ -2,12 +2,15 @@ import type { ElpisApp } from '@elpis/core'
 import type { ValidateFunction } from 'ajv'
 import type Koa from 'koa'
 import Ajv from 'ajv'
+import addFormats from 'ajv-formats'
 
 const ajv = new Ajv()
+addFormats(ajv)
 
 export default function (app: ElpisApp): Koa.Middleware {
   // @see https://json-schema.org/understanding-json-schema/reference/schema#schema
-  const $schema = 'https://json-schema.org/draft/2020-12/schema'
+  // 使用 Draft 7 的元架构，因为 AJV 8.x 默认支持 Draft 7
+  const $schema = 'http://json-schema.org/draft-07/schema#'
 
   return async (ctx, next) => {
     const { query, headers, body } = ctx.request as any

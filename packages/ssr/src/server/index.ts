@@ -3,7 +3,7 @@ import c2k from 'koa-connect'
 import { createServer as createViteServer } from 'vite'
 import { createViteRouterMiddleware } from './middleware/router'
 
-export async function createServer() {
+export async function createServer(options: { inputDir?: string } = {}) {
   const vite = await createViteServer({
     server: {
       middlewareMode: true,
@@ -22,7 +22,7 @@ export async function createServer() {
   }
 
   app.use(c2k(vite.middlewares))
-  app.use(createViteRouterMiddleware(vite))
+  app.use(createViteRouterMiddleware(vite, options))
 
   const { server } = app.options
 
